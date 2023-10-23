@@ -7,6 +7,8 @@ import AuthContext from '@/components/context/AuthContext';
 import getCurrentUser from '@/actions/getCurrentUser';
 import Sidebar from '@/components/sidebar/Sidebar';
 
+import { Toaster } from '@/components/ui/toaster';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -29,6 +31,7 @@ export default async function RootLayout({
             <Sidebar currentUser={currentUser} />
             {children}
           </main>
+          <Toaster />
           <footer className='py-5'>
             <div className='text-center text-sm'>
               Copyright © All rights reserved | letters-tube
