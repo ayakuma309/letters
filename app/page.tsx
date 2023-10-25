@@ -1,10 +1,6 @@
-import getCurrentUser from '@/actions/getCurrentUser';
-
 const Home = async () => {
-  const currentUser = await getCurrentUser();
   return (
-    <div className='flex flex-col min-h-screen items-center justify-center p-24 bg-gray-100'>
-      {currentUser ? <div>認証中</div> : <div>未認証</div>}
+    <div className='flex flex-col min-h-screen items-center justify-center p-24'>
       <div className='text-gray-600'>
         <div className='flex flex-col  items-center text-center justify-center'>
           <h1 className='sm:text-7xl text-5xl mb-4 font-medium text-red-600'>
