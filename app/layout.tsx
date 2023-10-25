@@ -27,7 +27,7 @@ export default async function RootLayout({
     <html lang='ja'>
       <body className={inter.className}>
         <AuthContext>
-          <div className='flex min-h-screen flex-col'>
+          <div className='flex min-h-screen flex-col bg-gray-100'>
             <Sidebar currentUser={currentUser} />
             <Toaster />
 
