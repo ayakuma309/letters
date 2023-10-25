@@ -2,6 +2,7 @@
 
 import React from 'react';
 import MenuItem from './MenuItem';
+import Link from 'next/link';
 
 type MenuItemsProps = {
   menuItems: {
@@ -15,12 +16,11 @@ const MenuItems: React.FC<MenuItemsProps> = ({ menuItems }) => {
   return (
     <ul className='pt-2'>
       {menuItems.map((menu, index) => (
-        <MenuItem
-          key={index}
-          title={menu.title}
-          path={menu.path}
-          src={menu.src}
-        />
+        <Link href={menu.path}>
+          <li className='flex items-center p-3 text-base font-normal rounded-lg cursor-pointer dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'>
+            <MenuItem key={index} title={menu.title} src={menu.src} />
+          </li>
+        </Link>
       ))}
     </ul>
   );
