@@ -24,7 +24,7 @@ type MenuProps = {
 
 const Menu: React.FC<MenuProps> = ({ currentUser }) => {
   const Menus = [
-    { title: 'youtube', path: '/posts_page', src: <ImYoutube2 /> },
+    { title: 'youtube', path: '/posts', src: <ImYoutube2 /> },
     {
       title: 'random',
       path: '/random_page',
@@ -36,7 +36,7 @@ const Menu: React.FC<MenuProps> = ({ currentUser }) => {
 
   //ログイン後のメニュー
   const LoginAfterMenus = [
-    { title: 'Youtube検索', path: '/search', src: <FaSearchPlus /> },
+    { title: 'Youtube検索', path: '/posts/search', src: <FaSearchPlus /> },
     { title: 'Qiita検索', path: '/qiita_search', src: <FaSearch /> },
     { title: 'Book検索', path: '/book_search', src: <GiArchiveResearch /> },
   ];
