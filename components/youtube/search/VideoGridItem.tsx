@@ -33,7 +33,7 @@ const VideoGridItem: React.FC<VideoGridItemProps> = ({ id, src, title }) => {
       const selectedTagNames = selectedTags.map((tag) => tag.label);
 
       // 新規投稿
-      const res = await axios.post('/api/post', {
+      const res = await axios.post('/api/video', {
         videoId: id,
         url: src,
         title: title,
