@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import DatePicker, { registerLocale } from 'react-datepicker';
@@ -8,7 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import ja from 'date-fns/locale/ja';
 import TagSelect from './TagSelect';
 import axios from 'axios';
-import { toast } from '../ui/use-toast';
+import { toast } from '@/components/ui/use-toast';
 
 interface VideoGridItemProps {
   id: string;

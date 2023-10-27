@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import React from 'react';
-import Search from '@/components/youtube/Search';
+import Search from '@/components/youtube/search/Search';
 import { redirect } from 'next/navigation';
 import getCurrentUser from '@/actions/getCurrentUser';
 

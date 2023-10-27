@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 import tagOptions from '@/json/tag.json';
