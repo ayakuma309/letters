@@ -16,7 +16,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentUser }) => {
         <div className='flex justify-center'>
           <Avatar>
             <AvatarImage src='/ogp.png' />
-            <AvatarFallback>Logo</AvatarFallback>
+            <AvatarFallback></AvatarFallback>
           </Avatar>
         </div>
         <Menu currentUser={currentUser} />
