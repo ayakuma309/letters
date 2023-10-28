@@ -35,7 +35,7 @@ const Menu: React.FC<MenuProps> = ({ currentUser }) => {
   //ログイン後のメニュー
   const LoginAfterMenus = [
     { title: 'Youtube検索', path: '/videos/search', src: <FaSearchPlus /> },
-    { title: 'Qiita検索', path: '/qiita_search', src: <FaSearch /> },
+    { title: 'Qiita検索', path: '/qiitas/search', src: <FaSearch /> },
     { title: 'Book検索', path: '/book_search', src: <GiArchiveResearch /> },
   ];
 
