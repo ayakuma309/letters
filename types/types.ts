@@ -1,4 +1,4 @@
-import { Decimal } from '@prisma/client/runtime/library';
+import { Bookmark } from '@prisma/client';
 
 //modal
 export type ModalType = {
@@ -15,17 +15,10 @@ export type VideoType = {
   tweet: number | null;
   releaseAt: Date;
   tags: TagType[];
+  bookmarks: Bookmark[] | null;
 };
 
 export type TagType = {
   id: number;
   name: string;
 };
-
-//bookmarks
-export interface BookmarkType {
-  id: string;
-  title: string;
-  startAt: Decimal;
-  youTubeId: number;
-}

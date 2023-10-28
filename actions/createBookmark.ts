@@ -1,6 +1,5 @@
 import { Bookmark } from '@prisma/client';
 import prisma from '@/lib/prisma';
-import { Decimal } from '@prisma/client/runtime/library';
 const createBookmark = async ({
   videoId,
   title,
@@ -8,7 +7,7 @@ const createBookmark = async ({
 }: {
   videoId: string;
   title: string;
-  startAt: Decimal;
+  startAt: number;
 }): Promise<Bookmark | null> => {
   try {
     const bookmark = await prisma.bookmark.create({
