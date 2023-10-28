@@ -1,0 +1,19 @@
+[
+  { "value": "ALL", "label": "ALL" },
+  { "value": "技術", "label": "技術" },
+  { "value": "学習方法", "label": "学習方法" },
+  { "value": "周辺知識", "label": "周辺知識" },
+  { "value": "業界知識", "label": "業界知識" },
+  { "value": "マインド", "label": "マインド" },
+  { "value": "カリキュラム", "label": "カリキュラム" },
+  { "value": "アプリ開発", "label": "アプリ開発" },
+  { "value": "書籍", "label": "書籍" },
+  { "value": "転職活動", "label": "転職活動" },
+  { "value": "転職後", "label": "転職後" },
+  { "value": "コードレビュー", "label": "コードレビュー" },
+  { "value": "キャリア", "label": "キャリア" },
+  { "value": "資格", "label": "資格" },
+  { "value": "バトラン", "label": "バトラン" },
+  { "value": "ライブ配信", "label": "ライブ配信" },
+  { "value": "その他", "label": "その他" }
+]
