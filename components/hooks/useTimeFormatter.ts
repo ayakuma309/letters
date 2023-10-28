@@ -1,6 +1,4 @@
-import { Decimal } from '@prisma/client/runtime/library';
-
-const useTimeFormatter = (secValue: Decimal) => {
+const useTimeFormatter = (secValue: number) => {
   const secInt = parseInt(secValue.toString(), 10);
   const hours = Math.floor(secInt / 3600);
   const minutes = Math.floor((secInt - hours * 3600) / 60);

@@ -6,6 +6,7 @@ const getVideo = async ({ id }: { id: string }) => {
       where: { id: parseInt(id) },
       include: {
         tags: true,
+        bookmarks: true,
       },
     });
 

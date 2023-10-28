@@ -1,5 +1,5 @@
 'use client';
-import { BookmarkType, VideoType } from '@/types/types';
+import { VideoType } from '@/types/types';
 import React, { useState } from 'react';
 import Youtube from 'react-youtube';
 import VideoTags from './VideoTags';
@@ -11,9 +11,8 @@ import Bookmarks from '../timestamp/Bookmarks';
 
 type VideoItemType = {
   video: VideoType;
-  bookmarks: BookmarkType[] | null;
 };
-const VideoItem: React.FC<VideoItemType> = ({ video, bookmarks }) => {
+const VideoItem: React.FC<VideoItemType> = ({ video }) => {
   const { data: session } = useSession();
   const newBookmarkModal = useNewBookmarkModal();
   const [YTPlayer, setYTPlayer] = useState<YT.Player>();
@@ -68,8 +67,8 @@ const VideoItem: React.FC<VideoItemType> = ({ video, bookmarks }) => {
           <NewBookmarkModal youTubeId={video.id} time={time} />
         </>
       )}
-      {bookmarks && bookmarks.length != 0 && (
-        <Bookmarks bookmarks={bookmarks} ytPlayer={YTPlayer} />
+      {video.bookmarks && video.bookmarks.length != 0 && (
+        <Bookmarks bookmarks={video.bookmarks} ytPlayer={YTPlayer} />
       )}
     </div>
   );
