@@ -15,7 +15,7 @@ export type VideoType = {
   tweet: number | null;
   releaseAt: Date;
   tags: TagType[];
-  bookmarks: Bookmark[] | null;
+  bookmarks?: Bookmark[] | null;
 };
 
 export type TagType = {
