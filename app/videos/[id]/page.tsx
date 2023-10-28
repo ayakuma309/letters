@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import getVideoById from '@/actions/getVideoById';
 import VideoItem from '@/components/youtube/VideoItem';
+import getBookmark from '@/actions/getBookmark';
 
 export const metadata: Metadata = {
   title: 'YouTube',
@@ -16,13 +17,14 @@ type Props = {
 
 export default async function Page({ params: { id } }: Props) {
   const video = await getVideoById({ id });
+  const bookmarks = await getBookmark({ id });
   if (!video) {
     return <div className='text-center'>動画はありません</div>;
   }
 
   return (
     <div className='space-y-2'>
-      <VideoItem video={video} />
+      <VideoItem video={video} bookmarks={bookmarks} />
     </div>
   );
 }
