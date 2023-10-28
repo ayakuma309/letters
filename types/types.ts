@@ -1,3 +1,5 @@
+import { Decimal } from '@prisma/client/runtime/library';
+
 //modal
 export type ModalType = {
   isOpen: boolean;
@@ -22,7 +24,8 @@ export type TagType = {
 
 //bookmarks
 export interface BookmarkType {
-  id: number;
+  id: string;
   title: string;
-  startAt: number;
+  startAt: Decimal;
+  youTubeId: number;
 }
