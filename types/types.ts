@@ -12,10 +12,17 @@ export type VideoType = {
   title: string;
   tweet: number | null;
   releaseAt: Date;
-  tags: { id: number; name: string }[];
+  tags: TagType[];
 };
 
 export type TagType = {
   id: number;
   name: string;
 };
+
+//bookmarks
+export interface BookmarkType {
+  id: number;
+  title: string;
+  startAt: number;
+}
