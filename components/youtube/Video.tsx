@@ -6,6 +6,7 @@ import { VideoType } from '@/types/types';
 import axios from 'axios';
 import { toast } from '../ui/use-toast';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 type Props = {
   video: VideoType;
@@ -38,13 +39,13 @@ const Video: React.FC<Props> = ({ video }) => {
     <div className='md:w-1/2 p-2'>
       <div className='bg-white shadow-md rounded p-5 mb-4'>
         <div className='mb-4'>
-          {/* <Link href={`/posts/${post.id}`}> */}
-          <img
-            src={video.url}
-            className='w-100 h-100 rounded-md  mx-auto'
-            alt='youtube image'
-          />
-          {/* </Link> */}
+          <Link href={`/videos/${video.id}`}>
+            <img
+              src={video.url}
+              className='w-100 h-100 rounded-md  mx-auto'
+              alt='youtube image'
+            />
+          </Link>
           <p className='break-words'>{video.title}</p>
           <div className='flex justify-between mt-2'>
             {/* タグ情報を表示 */}

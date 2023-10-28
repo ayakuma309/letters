@@ -76,7 +76,7 @@ model YouTubeTag {
 model Bookmark {
   id          String     @id @default(uuid())
   title       String
-  startAt     Decimal
+  startAt     Int
   youTubeId   Int
   youTube     YouTube    @relation(fields: [youTubeId], references: [id])
 }

@@ -1,3 +1,5 @@
+import { Bookmark } from '@prisma/client';
+
 //modal
 export type ModalType = {
   isOpen: boolean;
@@ -12,7 +14,8 @@ export type VideoType = {
   title: string;
   tweet: number | null;
   releaseAt: Date;
-  tags: { id: number; name: string }[];
+  tags: TagType[];
+  bookmarks: Bookmark[] | null;
 };
 
 export type TagType = {

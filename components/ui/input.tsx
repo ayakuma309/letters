@@ -1,25 +1,52 @@
-import * as React from 'react';
+import { FieldValues, UseFormRegister } from 'react-hook-form';
 
-import { cn } from '@/lib/utils';
+type InputProps = {
+  id: string;
+  label: string;
+  type?: string;
+  disabled?: boolean;
+  required?: boolean;
+  register: UseFormRegister<FieldValues>;
+  errors: any;
+};
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
-
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, ...props }, ref) => {
-    return (
+// 入力フォーム
+const Input: React.FC<InputProps> = ({
+  id,
+  label,
+  type = 'text',
+  disabled,
+  register,
+  required,
+  errors,
+}) => {
+  return (
+    <div className='relative w-full'>
+      <div className='mb-2 font-bold'>{label}</div>
       <input
+        id={id}
+        disabled={disabled}
+        {...register(id, { required })}
+        placeholder=''
         type={type}
-        className={cn(
-          'flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50',
-          className
-        )}
-        ref={ref}
-        {...props}
+        className={`w-full rounded-lg border-2 p-4 outline-none transition disabled:cursor-not-allowed disabled:opacity-70
+          ${
+            errors[id]
+              ? 'border-red-500 focus:border-red-500'
+              : 'border-neutral-300 focus:border-sky-500'
+          }
+        `}
       />
-    );
-  }
-);
+
+      {errors[id] && (
+        <div className='my-3 text-center text-sm text-red-500'>
+          {errors[id].message}
+        </div>
+      )}
+    </div>
+  );
+};
+
 Input.displayName = 'Input';
 
 export { Input };
