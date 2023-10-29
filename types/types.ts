@@ -23,6 +23,9 @@ export type VideoType = {
   bookmarks?: Bookmark[] | null;
 };
 
+// Pick で利用したいプロパティのみを抽出
+export type RandomVideoType = Pick<VideoType, 'id' | 'videoId' | 'url'>;
+
 export type TagType = {
   id: number;
   name: string;
