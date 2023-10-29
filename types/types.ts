@@ -27,3 +27,28 @@ export type TagType = {
   id: number;
   name: string;
 };
+
+// book一覧
+export interface BooksType {
+  id: number;
+  bookId: string;
+  title: string;
+  description: string | undefined;
+  pageCount: number | undefined;
+  image: string | undefined;
+  tags: TagType[];
+}
+// google books api から取得した情報のインタフェース
+export type Book = Omit<BooksType, 'tags'>;
+
+export type GoogleBooksResponse = {
+  id: string;
+  volumeInfo: {
+    title: string;
+    description?: string;
+    imageLinks?: {
+      thumbnail: string;
+    };
+    pageCount?: number;
+  };
+};
