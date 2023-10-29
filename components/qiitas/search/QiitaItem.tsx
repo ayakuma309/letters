@@ -22,7 +22,6 @@ const QiitaItem: React.FC<Props> = ({ item }) => {
   const handleSubmitQiita = async () => {
     try {
       // Qiita記事のタグ名を取得
-      // const qiitaTagNames = item.tags.map((tag) => tag.name);
       const selectedTagNames = selectedTags.map((tag) => tag.label);
       // 投稿
       await axios.post('/api/qiita', {
