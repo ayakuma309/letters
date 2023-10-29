@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import React from 'react';
 import { redirect } from 'next/navigation';
 import getCurrentUser from '@/actions/getCurrentUser';
-import Search from '@/components/books/Search';
+import Search from '@/components/videos/search/Search';
 
 export const metadata: Metadata = {
   title: 'YouTube',
