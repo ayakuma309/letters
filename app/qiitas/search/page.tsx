@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 import Search from '@/components/qiitas/search/Search';
 
 export const metadata: Metadata = {
-  title: 'Qiita記事一覧',
-  description: 'Qiita記事を紹介します。',
+  title: 'Qiita記事検索',
+  description: 'Qiita記事検索',
 };
 
 export default async function Page() {
