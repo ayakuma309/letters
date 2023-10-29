@@ -23,7 +23,6 @@ const Search = () => {
       id: elem.id,
       title: elem.volumeInfo.title,
       description: elem.volumeInfo?.description,
-      pageCount: elem.volumeInfo.pageCount,
       image: elem.volumeInfo?.imageLinks?.thumbnail,
       infoLink: elem.volumeInfo.infoLink,
     })) ?? [];

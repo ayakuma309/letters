@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { BsBookmark } from 'react-icons/bs';
 import BookTagSelect from './BookTagSelect';
-import { Book, OptionType } from '@/types/types';
+import { BookSearchResultType, OptionType } from '@/types/types';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { toast } from '@/components/ui/use-toast';
 
 type Props = {
-  book: Book;
+  book: BookSearchResultType;
 };
 
 const BookItem: React.FC<Props> = ({ book }) => {

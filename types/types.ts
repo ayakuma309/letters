@@ -29,17 +29,16 @@ export type TagType = {
 };
 
 // book一覧
-export interface BooksType {
+export interface BookType {
   id: number;
   bookId: string;
   title: string;
-  description: string | undefined;
-  pageCount: number | undefined;
+  description?: string | undefined;
   image: string | undefined;
+  infoLink: string;
   tags: TagType[];
 }
-// google books api から取得した情報のインタフェース
-export type Book = Omit<BooksType, 'tags'>;
+export type BookSearchResultType = Omit<BookType, 'tags'>;
 
 export type GoogleBooksResponse = {
   id: string;
@@ -49,6 +48,6 @@ export type GoogleBooksResponse = {
     imageLinks?: {
       thumbnail: string;
     };
-    pageCount?: number;
+    infoLink?: string;
   };
 };
