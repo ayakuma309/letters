@@ -32,6 +32,7 @@ const QiitaItem: React.FC<Props> = ({ item }) => {
         tags: selectedTagNames,
       });
       router.push('/qiitas');
+      router.refresh();
       toast({
         title: 'Qiita記事を保存しました',
         variant: 'success',
