@@ -25,7 +25,7 @@ const Menu: React.FC<MenuProps> = ({ currentUser }) => {
     { title: 'youtube', path: '/videos', src: <ImYoutube2 /> },
     {
       title: 'random',
-      path: '/random_page',
+      path: '/random',
       src: <GiPerspectiveDiceSixFacesRandom />,
     },
     { title: 'Qiita', path: '/qiitas', src: <SiQiita /> },
