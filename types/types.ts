@@ -7,6 +7,11 @@ export type ModalType = {
   onClose: () => void;
 };
 
+export type OptionType = {
+  value: string;
+  label: string;
+};
+
 export type VideoType = {
   id: number;
   videoId: string;
@@ -15,7 +20,7 @@ export type VideoType = {
   tweet: number | null;
   releaseAt: Date;
   tags: TagType[];
-  bookmarks: Bookmark[] | null;
+  bookmarks?: Bookmark[] | null;
 };
 
 export type TagType = {

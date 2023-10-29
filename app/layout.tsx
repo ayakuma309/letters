@@ -29,18 +29,18 @@ export default async function RootLayout({
         <AuthContext>
           <div className='flex min-h-screen flex-col bg-gray-100'>
             <Sidebar currentUser={currentUser} />
-            <Toaster />
-
-            <main className='container mx-auto max-w-screen-md flex-1 px-2'>
-              {children}
-            </main>
-
-            {/* フッター */}
-            <footer className='py-5'>
-              <div className='text-center text-sm'>
-                Copyright © All rights reserved | Letters Tube
-              </div>
-            </footer>
+            <div className='flex-1'>
+              <Toaster />
+              <main className='container mx-auto max-w-screen-md px-2'>
+                {children}
+              </main>
+              {/* フッター */}
+              <footer className='py-5'>
+                <div className='text-center text-sm'>
+                  Copyright © All rights reserved | Letters Tube
+                </div>
+              </footer>
+            </div>
           </div>
         </AuthContext>
       </body>

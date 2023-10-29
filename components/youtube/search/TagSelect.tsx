@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
-import tagOptions from '@/json/tag.json';
-
-interface OptionType {
-  value: string;
-  label: string;
-}
+import { OptionType } from '@/types/types';
 
 interface TagSelectProps {
   onChange: (selectedTags: OptionType[]) => void;
   value: OptionType[];
+  tagOpt: OptionType[];
 }
 
-const TagSelect: React.FC<TagSelectProps> = ({ onChange, value }) => {
+const TagSelect: React.FC<TagSelectProps> = ({ onChange, value, tagOpt }) => {
   const [selectedTags, setSelectedTags] = useState<OptionType[]>(value);
 
   useEffect(() => {
@@ -22,7 +18,7 @@ const TagSelect: React.FC<TagSelectProps> = ({ onChange, value }) => {
   return (
     <Select
       isMulti
-      options={tagOptions}
+      options={tagOpt}
       value={selectedTags}
       onChange={(selectedTags) => {
         setSelectedTags(selectedTags as OptionType[]);

@@ -26,9 +26,9 @@ const VideoItems: React.FC<VideoItemsProps> = ({ videos }) => {
   };
 
   return (
-    <div className='min-h-screen'>
+    <>
       <main className='container mx-auto py-4'>
-        <div className='mt-3 mb-5 flex flex-wrap'>
+        <div className='mt-3 mb-5 flex flex-wrap p-2'>
           {tagOptions.map((tag) => (
             <div onClick={() => handleSearch(tag)} key={tag.value}>
               <p className='bg-white text-gray-800 p-4 rounded-md text-xs mr-2 mb-2 cursor-pointer'>
@@ -44,7 +44,7 @@ const VideoItems: React.FC<VideoItemsProps> = ({ videos }) => {
             ))}
         </div>
       </main>
-    </div>
+    </>
   );
 };
 
