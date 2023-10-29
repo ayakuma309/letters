@@ -25,7 +25,7 @@ const Video: React.FC<Props> = ({ video }) => {
         title: '投稿を削除しました',
         variant: 'success',
       });
-      router.push('/');
+      router.push('/videos');
       router.refresh();
     } catch (err) {
       toast({

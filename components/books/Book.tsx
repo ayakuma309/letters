@@ -7,12 +7,15 @@ import { BsFillTrashFill } from 'react-icons/bs';
 import { toast } from '../ui/use-toast';
 import axios from 'axios';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 type BookProps = {
   book: BookType;
 };
 const Book: React.FC<BookProps> = ({ book }) => {
   const { data: session } = useSession();
+  const router = useRouter();
+
   const handleDelete = async (id: number) => {
     const shouldDelete = window.confirm('この投稿を削除しますか？');
     if (!shouldDelete) return;
@@ -22,6 +25,8 @@ const Book: React.FC<BookProps> = ({ book }) => {
         title: '削除しました',
         variant: 'success',
       });
+      router.push('/qiitas');
+      router.refresh();
     } catch (err) {
       toast({
         title: '削除に失敗しました',
