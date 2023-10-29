@@ -21,7 +21,6 @@ const createBook = async ({
       });
 
       if (existingTag) {
-        console.log(existingTag);
         return existingTag;
       } else {
         return prisma.bookTag.create({ data: { name: tagName } });

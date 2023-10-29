@@ -21,7 +21,6 @@ const createVideo = async ({
       });
 
       if (existingTag) {
-        console.log(existingTag);
         return existingTag;
       } else {
         return prisma.qiitaTag.create({ data: { name: tagName } });
