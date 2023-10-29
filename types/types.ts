@@ -7,6 +7,11 @@ export type ModalType = {
   onClose: () => void;
 };
 
+export type OptionType = {
+  value: string;
+  label: string;
+};
+
 export type VideoType = {
   id: number;
   videoId: string;
