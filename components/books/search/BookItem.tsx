@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
 import { BsBookmark } from 'react-icons/bs';
 import BookTagSelect from './BookTagSelect';
-import { Book } from '@/types/types';
-import { toast } from '../ui/use-toast';
+import { Book, OptionType } from '@/types/types';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import { toast } from '@/components/ui/use-toast';
 
 type Props = {
   book: Book;
 };
-
-interface OptionType {
-  value: string;
-  label: string;
-}
 
 const BookItem: React.FC<Props> = ({ book }) => {
   const { data: session } = useSession();
@@ -31,8 +26,8 @@ const BookItem: React.FC<Props> = ({ book }) => {
       await axios.post('/api/book', {
         bookId: book.id,
         title: book.title,
-        description: book.description,
         image: book.image,
+        infoLink: book.infoLink,
         tags: selectedTagNames,
       });
 

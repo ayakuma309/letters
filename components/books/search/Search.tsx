@@ -1,9 +1,9 @@
 'use client';
 import React, { useState } from 'react';
 import useSWR from 'swr';
-import BookSearchForm from '@/components/books/BookSearchForm';
-import BookList from '@/components/books/BookList';
 import { GoogleBooksResponse } from '@/types/types';
+import BookSearchForm from './BookSearchForm';
+import BookList from './BookList';
 
 function fetcher(url: string) {
   return fetch(url).then((res) => res.json());
@@ -25,6 +25,7 @@ const Search = () => {
       description: elem.volumeInfo?.description,
       pageCount: elem.volumeInfo.pageCount,
       image: elem.volumeInfo?.imageLinks?.thumbnail,
+      infoLink: elem.volumeInfo.infoLink,
     })) ?? [];
 
   const onClickSearch = (newQuery: string) => {
