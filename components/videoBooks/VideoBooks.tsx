@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 import { BookVideoType, OptionType } from '@/types/types';
-// import { useRouter } from 'next/navigation';
-// import axios from 'axios';
-// import { toast } from '../ui/use-toast';
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
+import { toast } from '../ui/use-toast';
 
 type VideoBooksProps = {
   videoId: number;
@@ -11,9 +11,9 @@ type VideoBooksProps = {
 };
 
 const VideoBooks: React.FC<VideoBooksProps> = ({ videoId, books }) => {
-  const [selectedBooks, setSelectedBooks] = useState<OptionType[]>([]);
+  const router = useRouter();
+  const [selectedBook, setSelectedBook] = useState<OptionType>();
 
-  // const router = useRouter();
   const BookList: OptionType[] = books.map((book) => ({
     value: book.id.toString(),
     label: book.title,
@@ -22,39 +22,37 @@ const VideoBooks: React.FC<VideoBooksProps> = ({ videoId, books }) => {
   const handleSubmitPost = async () => {
     const data = {
       videoId: videoId,
-      bookIds: selectedBooks.map((book) => book.value),
+      bookId: selectedBook?.value,
     };
-    console.log(data);
-    // try {
-    //   // 新規投稿
-    //   const res = await axios.post('/api/video', data);
+    try {
+      // 新規投稿
+      const res = await axios.post('/api/video/books', data);
 
-    //   if (res.status === 200) {
-    //     toast({
-    //       title: '投稿しました',
-    //       variant: 'success',
-    //     });
-    //     router.push('/');
-    //     router.refresh()
-    //   }
-    //   setSelectedBooks([]);
-    // } catch (err) {
-    //   console.log(err);
-    //   toast({
-    //     title: '投稿に失敗しました',
-    //     variant: 'destructive',
-    //   });
-    // }
+      if (res.status === 200) {
+        toast({
+          title: '投稿しました',
+          variant: 'success',
+        });
+        router.push('/');
+        router.refresh();
+      }
+    } catch (err) {
+      console.log(err);
+      toast({
+        title: '投稿に失敗しました',
+        variant: 'destructive',
+      });
+    }
   };
 
   return (
     <form onSubmit={handleSubmitPost}>
       <Select
-        isMulti
+        id='selectbox'
         options={BookList}
-        value={selectedBooks}
+        value={selectedBook}
         onChange={(selectedBooks) => {
-          setSelectedBooks(selectedBooks as OptionType[]);
+          setSelectedBook(selectedBooks as OptionType);
         }}
         placeholder='書籍を選択してください'
       />
