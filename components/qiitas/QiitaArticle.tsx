@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { BsFillTrashFill } from 'react-icons/bs';
 import { QiitaArticleType } from '@/types/qiitaTypes';
