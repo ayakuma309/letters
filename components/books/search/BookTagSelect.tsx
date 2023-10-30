@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
-import bookTagOptions from '@/json/specTag.json';
+import bookTagOptions from '@/json/bookTag.json';
 
 interface OptionType {
   value: string;
