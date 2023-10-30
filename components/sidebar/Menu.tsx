@@ -1,19 +1,14 @@
-import React from 'react';
 import { User } from '@prisma/client';
+import React from 'react';
+import Link from 'next/link';
+import { signOut } from 'next-auth/react';
 
-import { ImYoutube2 } from 'react-icons/im';
-import { GiPerspectiveDiceSixFacesRandom } from 'react-icons/gi';
 import { IoMdLogIn } from 'react-icons/io';
 import { IoMdLogOut } from 'react-icons/io';
-import { SiQiita } from 'react-icons/si';
-import { FaSearch } from 'react-icons/fa';
-import { BiSolidBookAlt } from 'react-icons/bi';
-import { GiArchiveResearch } from 'react-icons/gi';
-import { FaSearchPlus } from 'react-icons/fa';
+import { LoginAfterMenus, Menus } from '@/constants/menu';
+
 import MenuItems from './MenuItems';
 import MenuItem from './MenuItem';
-import { signOut } from 'next-auth/react';
-import Link from 'next/link';
 import { toast } from '../ui/use-toast';
 
 type MenuProps = {
@@ -21,24 +16,6 @@ type MenuProps = {
 };
 
 const Menu: React.FC<MenuProps> = ({ currentUser }) => {
-  const Menus = [
-    { title: 'youtube', path: '/videos', src: <ImYoutube2 /> },
-    {
-      title: 'random',
-      path: '/random',
-      src: <GiPerspectiveDiceSixFacesRandom />,
-    },
-    { title: 'Qiita', path: '/qiitas', src: <SiQiita /> },
-    { title: 'Book', path: '/books', src: <BiSolidBookAlt /> },
-  ];
-
-  //ログイン後のメニュー
-  const LoginAfterMenus = [
-    { title: 'Youtube検索', path: '/videos/search', src: <FaSearchPlus /> },
-    { title: 'Qiita検索', path: '/qiitas/search', src: <FaSearch /> },
-    { title: 'Book検索', path: '/books/search', src: <GiArchiveResearch /> },
-  ];
-
   //logout
   const handleLogout = () => {
     const confirmed = window.confirm('ログアウトしますか？');
@@ -52,7 +29,7 @@ const Menu: React.FC<MenuProps> = ({ currentUser }) => {
   };
 
   return (
-    <>
+    <ul className='list-reset flex flex-row md:flex-col text-center'>
       <MenuItems menuItems={Menus} />
       {currentUser ? (
         <>
@@ -71,7 +48,7 @@ const Menu: React.FC<MenuProps> = ({ currentUser }) => {
           </div>
         </Link>
       )}
-    </>
+    </ul>
   );
 };
 

@@ -8,7 +8,7 @@ import TagSelect from './TagSelect';
 import axios from 'axios';
 import { toast } from '@/components/ui/use-toast';
 import { OptionType } from '@/types/types';
-import tagOptions from '@/json/tag.json';
+import { videoTags } from '@/constants/videoTag';
 interface VideoGridItemProps {
   id: string;
   src: string;
@@ -75,7 +75,7 @@ const VideoGridItem: React.FC<VideoGridItemProps> = ({ id, src, title }) => {
         <TagSelect
           value={selectedTags}
           onChange={(tags) => setSelectedTags(tags)}
-          tagOpt={tagOptions}
+          tagOpt={videoTags}
         />
         <button
           type='submit'
