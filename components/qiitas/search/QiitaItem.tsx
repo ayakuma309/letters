@@ -1,16 +1,16 @@
 import { toast } from '@/components/ui/use-toast';
 import TagSelect from '@/components/videos/search/TagSelect';
-import { QiitaItemsProps } from '@/types/qiitaTypes';
+import { QiitaItemsType } from '@/types/qiitaTypes';
 import { OptionType } from '@/types/types';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { BsBookmark } from 'react-icons/bs';
-import specTag from '@/json/specTag.json';
+import qiitaTag from '@/json/qiitaTag.json';
 
 type Props = {
-  item: QiitaItemsProps;
+  item: QiitaItemsType;
 };
 
 const QiitaItem: React.FC<Props> = ({ item }) => {
@@ -77,7 +77,7 @@ const QiitaItem: React.FC<Props> = ({ item }) => {
             <TagSelect
               value={selectedTags}
               onChange={(tags) => setSelectedTags(tags)}
-              tagOpt={specTag}
+              tagOpt={qiitaTag}
             />
             <button
               type='submit'

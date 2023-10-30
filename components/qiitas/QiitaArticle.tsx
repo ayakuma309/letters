@@ -1,14 +1,12 @@
-'use client';
-
 import React from 'react';
 import { BsFillTrashFill } from 'react-icons/bs';
-import { QiitaArticleProps } from '@/types/qiitaTypes';
+import { QiitaArticleType } from '@/types/qiitaTypes';
 import { useSession } from 'next-auth/react';
 import { toast } from '@/components/ui/use-toast';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 
-const QiitaArticle: React.FC<QiitaArticleProps> = ({
+const QiitaArticle: React.FC<QiitaArticleType> = ({
   id,
   url,
   title,

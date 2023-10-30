@@ -1,8 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import getBook from '@/actions/getBook';
-import Book from '@/components/books/Book';
-import { BookType } from '@/types/types';
+import Books from '@/components/books/Books';
 
 export const metadata: Metadata = {
   title: '書籍情報',
@@ -18,13 +17,7 @@ export default async function Page() {
 
   return (
     <div className='space-y-2'>
-      {books && (
-        <div className='flex flex-wrap justify-center'>
-          {books.map((book: BookType) => (
-            <Book key={book.id} book={book} />
-          ))}
-        </div>
-      )}
+      <Books books={books} />
     </div>
   );
 }

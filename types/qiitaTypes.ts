@@ -1,17 +1,17 @@
+import { TagType } from './types';
+
 // アプリ内で利用するためのQiita記事 型定義
-export type QiitaItemsProps = Pick<
+export type QiitaItemsType = Pick<
   QiitaItemResponse,
   'id' | 'title' | 'user' | 'tags' | 'url'
 >; // Pick で利用したいプロパティのみを抽出
 
-export interface QiitaArticleProps {
+export interface QiitaArticleType {
   id: number;
   title: string;
   url: string;
   profileImageUrl: string;
-  tags: {
-    name: string;
-  }[];
+  tags: TagType[];
 }
 
 // Qiita Api レスポンスの型定義

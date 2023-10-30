@@ -1,12 +1,12 @@
 import React from 'react';
-import { QiitaItemsProps } from '@/types/qiitaTypes';
+import { QiitaItemsType } from '@/types/qiitaTypes';
 import QiitaItem from './QiitaItem';
 
 function QiitaList({
   data,
   error,
 }: {
-  data: QiitaItemsProps[] | null;
+  data: QiitaItemsType[] | null;
   error: any;
 }) {
   return (
@@ -14,7 +14,7 @@ function QiitaList({
       {error && <div>データの読み込み中にエラーが発生しました。</div>}
       {data && (
         <div>
-          {data.map((item: QiitaItemsProps) => (
+          {data.map((item: QiitaItemsType) => (
             <QiitaItem key={item.id} item={item} />
           ))}
         </div>
