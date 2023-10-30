@@ -14,17 +14,15 @@ const VideoItems: React.FC<VideoItemsProps> = ({ videos }) => {
   const { searchResults, handleSearch } = useVideoTagSearch(videos);
 
   return (
-    <>
-      <main className='container mx-auto py-4'>
-        <TagList handleSearch={handleSearch} tagOptions={tagOptions} />
-        <div className='flex flex-wrap justify-between'>
-          {searchResults &&
-            searchResults.map((video: VideoType) => (
-              <Video key={video.id} video={video} />
-            ))}
-        </div>
-      </main>
-    </>
+    <div className='container mx-auto py-4'>
+      <TagList handleSearch={handleSearch} tagOptions={tagOptions} />
+      <div className='flex flex-wrap justify-between'>
+        {searchResults &&
+          searchResults.map((video: VideoType) => (
+            <Video key={video.id} video={video} />
+          ))}
+      </div>
+    </div>
   );
 };
 
