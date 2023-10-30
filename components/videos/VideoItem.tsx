@@ -1,5 +1,5 @@
 'use client';
-import { VideoType } from '@/types/types';
+import { BookVideoType, VideoType } from '@/types/types';
 import React, { useState } from 'react';
 import Youtube from 'react-youtube';
 import VideoTags from './VideoTags';
@@ -8,11 +8,13 @@ import useNewBookmarkModal from '../hooks/useNewBookmarkModal';
 import { useSession } from 'next-auth/react';
 import Bookmarks from '../timestamp/Bookmarks';
 import BookmarkForm from '../timestamp/BookmarkForm';
+import VideoBooks from '../videoBooks/VideoBooks';
 
 type VideoItemType = {
   video: VideoType;
+  books: BookVideoType[];
 };
-const VideoItem: React.FC<VideoItemType> = ({ video }) => {
+const VideoItem: React.FC<VideoItemType> = ({ video, books }) => {
   const { data: session } = useSession();
   const newBookmarkModal = useNewBookmarkModal();
   const [YTPlayer, setYTPlayer] = useState<YT.Player>();
@@ -64,6 +66,7 @@ const VideoItem: React.FC<VideoItemType> = ({ video }) => {
       {video.bookmarks && video.bookmarks.length != 0 && (
         <Bookmarks bookmarks={video.bookmarks} ytPlayer={YTPlayer} />
       )}
+      <VideoBooks videoId={video.id} books={books} />
     </div>
   );
 };
