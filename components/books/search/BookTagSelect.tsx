@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
-import bookTagOptions from '@/json/bookTag.json';
+import { bookTags } from '@/constants/bookTag';
 
 interface OptionType {
   value: string;
@@ -22,7 +22,7 @@ const BookTagSelect: React.FC<BookTagSelectProps> = ({ onChange, value }) => {
   return (
     <Select
       isMulti
-      options={bookTagOptions}
+      options={bookTags}
       value={selectedTags}
       onChange={(selectedTags) => {
         setSelectedTags(selectedTags as OptionType[]);

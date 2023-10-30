@@ -7,7 +7,7 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { BsBookmark } from 'react-icons/bs';
-import qiitaTag from '@/json/qiitaTag.json';
+import { qiitaTags } from '@/constants/qiitaTag';
 
 type Props = {
   item: QiitaItemsType;
@@ -77,7 +77,7 @@ const QiitaItem: React.FC<Props> = ({ item }) => {
             <TagSelect
               value={selectedTags}
               onChange={(tags) => setSelectedTags(tags)}
-              tagOpt={qiitaTag}
+              tagOpt={qiitaTags}
             />
             <button
               type='submit'

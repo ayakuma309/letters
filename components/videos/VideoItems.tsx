@@ -2,9 +2,9 @@
 import React from 'react';
 import { VideoType } from '@/types/types';
 import { useVideoTagSearch } from '../hooks/useTagSearch';
-import tagOptions from '@/json/tag.json';
 import Video from './Video';
 import TagList from '../common/search/TagList';
+import { videoTags } from '@/constants/videoTag';
 
 type VideoItemsProps = {
   videos: VideoType[];
@@ -15,7 +15,7 @@ const VideoItems: React.FC<VideoItemsProps> = ({ videos }) => {
 
   return (
     <div className='container mx-auto py-4'>
-      <TagList handleSearch={handleSearch} tagOptions={tagOptions} />
+      <TagList handleSearch={handleSearch} tagOptions={videoTags} />
       <div className='flex flex-wrap justify-between'>
         {searchResults &&
           searchResults.map((video: VideoType) => (
