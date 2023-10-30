@@ -23,7 +23,34 @@ export type VideoType = {
   bookmarks?: Bookmark[] | null;
 };
 
+// Pick で利用したいプロパティのみを抽出
+export type RandomVideoType = Pick<VideoType, 'id' | 'videoId' | 'url'>;
+
 export type TagType = {
   id: number;
   name: string;
+};
+
+// book一覧
+export interface BookType {
+  id: number;
+  bookId: string;
+  title: string;
+  description?: string | undefined;
+  image: string | undefined;
+  infoLink: string;
+  tags: TagType[];
+}
+export type BookSearchResultType = Omit<BookType, 'tags'>;
+
+export type GoogleBooksResponse = {
+  id: string;
+  volumeInfo: {
+    title: string;
+    description?: string;
+    imageLinks?: {
+      thumbnail: string;
+    };
+    infoLink?: string;
+  };
 };

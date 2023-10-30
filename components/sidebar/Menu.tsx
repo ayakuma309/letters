@@ -25,7 +25,7 @@ const Menu: React.FC<MenuProps> = ({ currentUser }) => {
     { title: 'youtube', path: '/videos', src: <ImYoutube2 /> },
     {
       title: 'random',
-      path: '/random_page',
+      path: '/random',
       src: <GiPerspectiveDiceSixFacesRandom />,
     },
     { title: 'Qiita', path: '/qiitas', src: <SiQiita /> },
@@ -36,7 +36,7 @@ const Menu: React.FC<MenuProps> = ({ currentUser }) => {
   const LoginAfterMenus = [
     { title: 'Youtube検索', path: '/videos/search', src: <FaSearchPlus /> },
     { title: 'Qiita検索', path: '/qiitas/search', src: <FaSearch /> },
-    { title: 'Book検索', path: '/book_search', src: <GiArchiveResearch /> },
+    { title: 'Book検索', path: '/books/search', src: <GiArchiveResearch /> },
   ];
 
   //logout

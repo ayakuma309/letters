@@ -6,6 +6,7 @@ import { QiitaArticleProps } from '@/types/qiitaTypes';
 import { useSession } from 'next-auth/react';
 import { toast } from '@/components/ui/use-toast';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 const QiitaArticle: React.FC<QiitaArticleProps> = ({
   id,
@@ -17,15 +18,18 @@ const QiitaArticle: React.FC<QiitaArticleProps> = ({
   const { data: session } = useSession();
 
   const handleDeleteQiita = async (id: number) => {
+    const router = useRouter();
+
     const shouldDelete = window.confirm('この投稿を削除しますか？');
     if (!shouldDelete) return;
     try {
       await axios.delete(`/api/qiita/${id}`);
-      window.location.reload();
       toast({
         title: '削除しました',
         variant: 'success',
       });
+      router.push('/qiitas');
+      router.refresh();
     } catch (err) {
       toast({
         title: '削除に失敗しました',

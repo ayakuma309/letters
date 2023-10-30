@@ -23,7 +23,6 @@ const createVideo = async ({
       });
 
       if (existingTag) {
-        console.log(existingTag);
         return existingTag;
       } else {
         return prisma.youTubeTag.create({ data: { name: tagName } });

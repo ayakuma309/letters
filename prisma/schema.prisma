@@ -78,7 +78,7 @@ model Bookmark {
   title       String
   startAt     Int
   youTubeId   Int
-  youTube     YouTube    @relation(fields: [youTubeId], references: [id])
+  youTube     YouTube    @relation(fields: [youTubeId], references: [id], onDelete: Cascade)
 }
 
 model Qiita {

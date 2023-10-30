@@ -1,5 +1,5 @@
 import { toast } from '@/components/ui/use-toast';
-import TagSelect from '@/components/youtube/search/TagSelect';
+import TagSelect from '@/components/videos/search/TagSelect';
 import { QiitaItemsProps } from '@/types/qiitaTypes';
 import { OptionType } from '@/types/types';
 import axios from 'axios';
@@ -32,6 +32,7 @@ const QiitaItem: React.FC<Props> = ({ item }) => {
         tags: selectedTagNames,
       });
       router.push('/qiitas');
+      router.refresh();
       toast({
         title: 'Qiita記事を保存しました',
         variant: 'success',

@@ -7,6 +7,7 @@
   { "value": "Next.js", "label": "Next.js" },
   { "value": "Vue.js", "label": "Vue.js" },
   { "value": "Nuxt.js", "label": "Nuxt.js" },
+  { "value": "個人開発", "label": "個人開発" },
   { "value": "SQL", "label": "SQL" },
   { "value": "HTML/CSS", "label": "HTML/CSS" },
   { "value": "UI/UX", "label": "UI/UX" },

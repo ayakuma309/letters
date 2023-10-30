@@ -1,40 +1,40 @@
-import { Qiita } from '@prisma/client';
+import { Book } from '@prisma/client';
 import prisma from '@/lib/prisma';
 
-const createVideo = async ({
-  qiitaId,
+const createBook = async ({
+  bookId,
   title,
-  url,
-  profileImageUrl,
+  image,
+  infoLink,
   tags,
 }: {
-  qiitaId: string;
+  bookId: string;
   title: string;
-  url: string;
-  profileImageUrl: string;
+  image: string;
+  infoLink: string;
   tags: string[];
-}): Promise<Qiita | null> => {
+}): Promise<Book | null> => {
   try {
     const tagPromises = tags.map(async (tagName: string) => {
-      const existingTag = await prisma.qiitaTag.findUnique({
+      const existingTag = await prisma.bookTag.findUnique({
         where: { name: tagName },
       });
 
       if (existingTag) {
         return existingTag;
       } else {
-        return prisma.qiitaTag.create({ data: { name: tagName } });
+        return prisma.bookTag.create({ data: { name: tagName } });
       }
     });
 
     const createdTags = await Promise.all(tagPromises);
 
-    const qiitas = await prisma.qiita.create({
+    const books = await prisma.book.create({
       data: {
-        qiitaId,
+        bookId,
         title,
-        url,
-        profileImageUrl,
+        image,
+        infoLink,
         tags: {
           connect: createdTags.map((tag) => ({ id: tag.id })),
         },
@@ -44,11 +44,11 @@ const createVideo = async ({
       },
     });
 
-    return qiitas;
+    return books;
   } catch (error) {
     console.log(error);
     return null;
   }
 };
 
-export default createVideo;
+export default createBook;
