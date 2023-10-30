@@ -6,8 +6,8 @@ import VideoTags from './VideoTags';
 import { TwitterShareButton } from 'react-share';
 import useNewBookmarkModal from '../hooks/useNewBookmarkModal';
 import { useSession } from 'next-auth/react';
-import NewBookmarkModal from '../timestamp/NewBookmarkModal';
 import Bookmarks from '../timestamp/Bookmarks';
+import BookmarkForm from '../timestamp/BookmarkForm';
 
 type VideoItemType = {
   video: VideoType;
@@ -55,17 +55,11 @@ const VideoItem: React.FC<VideoItemType> = ({ video }) => {
         </div>
       </div>
       {session?.user && (
-        <>
-          <div className='text-center'>
-            <button
-              className='p-4 bg-orange-500 rounded-md text-white font-bold'
-              onClick={handleMakeTimestamp}
-            >
-              タイムスタンプ作成
-            </button>
-          </div>
-          <NewBookmarkModal youTubeId={video.id} time={time} />
-        </>
+        <BookmarkForm
+          video={video}
+          time={time}
+          handleMakeTimestamp={handleMakeTimestamp}
+        />
       )}
       {video.bookmarks && video.bookmarks.length != 0 && (
         <Bookmarks bookmarks={video.bookmarks} ytPlayer={YTPlayer} />
