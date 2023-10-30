@@ -42,8 +42,8 @@ const VideoGridItem: React.FC<VideoGridItemProps> = ({ id, src, title }) => {
           title: '投稿しました',
           variant: 'success',
         });
-        // router.refresh()
         router.push('/');
+        router.refresh();
       }
       // 投稿後、投稿フォームのテキストエリアをクリア
       setSelectedTags([]);

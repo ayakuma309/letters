@@ -54,3 +54,5 @@ export type GoogleBooksResponse = {
     infoLink?: string;
   };
 };
+
+export type BookVideoType = Pick<BookType, 'id' | 'title'>;
