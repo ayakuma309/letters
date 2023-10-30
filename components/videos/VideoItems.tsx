@@ -1,42 +1,22 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
+import { VideoType } from '@/types/types';
+import { useVideoTagSearch } from '../hooks/useTagSearch';
 import tagOptions from '@/json/tag.json';
 import Video from './Video';
-import { VideoType } from '@/types/types';
-
-type OptionType = {
-  value: string;
-  label: string;
-};
+import TagList from '../common/search/TagList';
 
 type VideoItemsProps = {
   videos: VideoType[];
 };
 
 const VideoItems: React.FC<VideoItemsProps> = ({ videos }) => {
-  const [searchResults, setSearchResults] = useState(videos);
-  const handleSearch = (tag: OptionType) => {
-    const newSearchTerm = tag.label;
-    const results = videos.filter(
-      (video: VideoType) =>
-        video.tags?.some((tag) => tag.name === newSearchTerm)
-    );
-    const res = results.length > 0 ? results : videos;
-    setSearchResults(res);
-  };
+  const { searchResults, handleSearch } = useVideoTagSearch(videos);
 
   return (
     <>
       <main className='container mx-auto py-4'>
-        <div className='mt-3 mb-5 flex flex-wrap p-2'>
-          {tagOptions.map((tag) => (
-            <div onClick={() => handleSearch(tag)} key={tag.value}>
-              <p className='bg-white text-gray-800 p-4 rounded-md text-xs mr-2 mb-2 cursor-pointer'>
-                {tag.label}
-              </p>
-            </div>
-          ))}
-        </div>
+        <TagList handleSearch={handleSearch} tagOptions={tagOptions} />
         <div className='flex flex-wrap justify-between'>
           {searchResults &&
             searchResults.map((video: VideoType) => (
