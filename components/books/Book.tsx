@@ -35,24 +35,20 @@ const Book: React.FC<BookProps> = ({ book }) => {
     }
   };
   return (
-    <div className='m-1 py-3 px-8  rounded-lg shadow-lg'>
-      <div className='flex flex-col items-center mt-3 justify-center'>
+    <div className='mt-3 m-1 py-3 px-3  rounded-lg shadow-lg'>
+      <div className='flex flex-col items-center justify-center'>
         <Link href={book.infoLink} rel='noopener noreferrer' target='_blank'>
-          <img
-            className='w-100 h-100 rounded mr-4'
-            alt='User Avatar'
-            src={book.image}
-          />
+          <img className='w-100 h-100' alt='User Avatar' src={book.image} />
         </Link>
+        {session?.user && (
+          <button
+            className='p-1 rounded-md font-bold text-2xl'
+            onClick={() => handleDelete(book.id)}
+          >
+            <BsFillTrashFill />
+          </button>
+        )}
       </div>
-      {session?.user && (
-        <button
-          className='p-1 rounded-md font-bold text-2xl'
-          onClick={() => handleDelete(book.id)}
-        >
-          <BsFillTrashFill />
-        </button>
-      )}
     </div>
   );
 };
