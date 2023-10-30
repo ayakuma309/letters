@@ -65,6 +65,7 @@ model YouTube {
   releaseAt   DateTime
   tags        YouTubeTag[]
   bookmarks   Bookmark[]
+  books YouTubeBook[]
 }
 
 model YouTubeTag {
@@ -103,10 +104,21 @@ model Book {
   image       String
   infoLink    String
   tags        BookTag[]
+  youTubes YouTubeBook[]
 }
 
 model BookTag {
   id          Int      @id @default(autoincrement())
   name        String   @unique
   books       Book[]
+}
+
+model YouTubeBook {
+  id          Int      @id @default(autoincrement())
+  youTubeId   Int
+  bookId      Int
+  youTube     YouTube  @relation(fields: [youTubeId], references: [id])
+  book        Book     @relation(fields: [bookId], references: [id])
+
+  @@unique([youTubeId, bookId])
 }
