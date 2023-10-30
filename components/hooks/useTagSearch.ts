@@ -15,6 +15,12 @@ const useTagSearch = <T extends { tags?: TagType[] }>(items: T[]) => {
 
   return { searchResults, handleSearch };
 };
+
+// Tag検索からOptionTypeもしくはTagTypeを受け取る場合
+// const useTagSearch = <T extends { tags?: TagType[] }>(items: T[], tagType: "OptionType" | "TagType") => {
+//   const handleSearch = (tag: OptionType | TagType) => {
+//     const newSearchTerm = tagType === "OptionType" ? tag.label : tag.name;
+
 export const useVideoTagSearch = (items: VideoType[]) => {
   return useTagSearch(items);
 };
