@@ -1,7 +1,7 @@
 import { YouTubeBook } from '@prisma/client';
 import prisma from '@/lib/prisma';
 
-const createVideoBooks = async ({
+const createVideoBook = async ({
   videoId,
   bookId,
 }: {
@@ -22,4 +22,4 @@ const createVideoBooks = async ({
   }
 };
 
-export default createVideoBooks;
+export default createVideoBook;

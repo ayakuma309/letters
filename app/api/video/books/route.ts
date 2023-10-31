@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import getCurrentUser from '@/actions/getCurrentUser';
-import createVideoBooks from '@/actions/createVideoBooks';
+import createVideoBook from '@/actions/createVideoBook';
 
 // 新規投稿
 export async function POST(request: Request) {
@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     }
 
     // 新規投稿
-    const response = await createVideoBooks({
+    const response = await createVideoBook({
       videoId,
       bookId,
     });

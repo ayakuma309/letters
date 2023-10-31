@@ -57,16 +57,18 @@ const VideoItem: React.FC<VideoItemType> = ({ video, books }) => {
         </div>
       </div>
       {session?.user && (
-        <BookmarkForm
-          video={video}
-          time={time}
-          handleMakeTimestamp={handleMakeTimestamp}
-        />
+        <>
+          <BookmarkForm
+            video={video}
+            time={time}
+            handleMakeTimestamp={handleMakeTimestamp}
+          />
+          <VideoBooks videoId={video.id} books={books} />
+        </>
       )}
       {video.bookmarks && video.bookmarks.length != 0 && (
         <Bookmarks bookmarks={video.bookmarks} ytPlayer={YTPlayer} />
       )}
-      <VideoBooks videoId={video.id} books={books} />
     </div>
   );
 };
