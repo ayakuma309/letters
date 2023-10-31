@@ -47,7 +47,7 @@ const VideoBooks: React.FC<VideoBooksProps> = ({ videoId, books }) => {
   };
 
   return (
-    <form onSubmit={handleSubmitPost}>
+    <form onSubmit={handleSubmitPost} className='flex justify-center my-5'>
       <Select
         id='selectbox'
         options={BookList}
