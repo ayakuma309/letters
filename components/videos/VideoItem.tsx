@@ -1,5 +1,5 @@
 'use client';
-import { BookType, BookVideoType, VideoType } from '@/types/types';
+import { BookVideoListType, BookVideoType, VideoType } from '@/types/types';
 import React, { useState } from 'react';
 import Youtube from 'react-youtube';
 import VideoTags from './VideoTags';
@@ -14,7 +14,7 @@ import VideoBook from './books/VideoBook';
 type VideoItemType = {
   video: VideoType;
   books: BookVideoType[];
-  videoBooks: BookType[];
+  videoBooks: BookVideoListType[];
 };
 const VideoItem: React.FC<VideoItemType> = ({ video, books, videoBooks }) => {
   const { data: session } = useSession();
@@ -74,7 +74,9 @@ const VideoItem: React.FC<VideoItemType> = ({ video, books, videoBooks }) => {
       <div className='flex flex-wrap items-center'>
         {videoBooks &&
           videoBooks.length != 0 &&
-          videoBooks.map((book) => <VideoBook key={book.id} book={book} />)}
+          videoBooks.map((book) => (
+            <VideoBook key={book.id} videoBook={book} />
+          ))}
       </div>
     </div>
   );

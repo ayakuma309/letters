@@ -55,4 +55,10 @@ export type GoogleBooksResponse = {
   };
 };
 
+//videoBook投稿
 export type BookVideoType = Pick<BookType, 'id' | 'title'>;
+
+export type BookVideoListType = {
+  id: number;
+  book: Pick<BookType, 'id' | 'image' | 'infoLink'>;
+};

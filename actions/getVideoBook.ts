@@ -11,7 +11,12 @@ const getVideoBook = async (videoId: string) => {
       },
     });
 
-    return videoBooks.map((videoBook) => videoBook.book);
+    return videoBooks.map((videoBook) => {
+      return {
+        id: videoBook.id,
+        book: videoBook.book,
+      };
+    });
   } catch (error) {
     console.error('Error fetching video books:', error);
     return [];
