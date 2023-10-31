@@ -1,18 +1,22 @@
 'use client';
-import { VideoType } from '@/types/types';
+import { BookVideoListType, BookVideoType, VideoType } from '@/types/types';
 import React, { useState } from 'react';
 import Youtube from 'react-youtube';
 import VideoTags from './VideoTags';
 import { TwitterShareButton } from 'react-share';
 import useNewBookmarkModal from '../hooks/useNewBookmarkModal';
 import { useSession } from 'next-auth/react';
-import NewBookmarkModal from '../timestamp/NewBookmarkModal';
 import Bookmarks from '../timestamp/Bookmarks';
+import BookmarkForm from '../timestamp/BookmarkForm';
+import VideoBookForm from './books/VideoBookForm';
+import VideoBook from './books/VideoBook';
 
 type VideoItemType = {
   video: VideoType;
+  books: BookVideoType[];
+  videoBooks: BookVideoListType[];
 };
-const VideoItem: React.FC<VideoItemType> = ({ video }) => {
+const VideoItem: React.FC<VideoItemType> = ({ video, books, videoBooks }) => {
   const { data: session } = useSession();
   const newBookmarkModal = useNewBookmarkModal();
   const [YTPlayer, setYTPlayer] = useState<YT.Player>();
@@ -56,20 +60,24 @@ const VideoItem: React.FC<VideoItemType> = ({ video }) => {
       </div>
       {session?.user && (
         <>
-          <div className='text-center'>
-            <button
-              className='p-4 bg-orange-500 rounded-md text-white font-bold'
-              onClick={handleMakeTimestamp}
-            >
-              タイムスタンプ作成
-            </button>
-          </div>
-          <NewBookmarkModal youTubeId={video.id} time={time} />
+          <BookmarkForm
+            video={video}
+            time={time}
+            handleMakeTimestamp={handleMakeTimestamp}
+          />
+          <VideoBookForm videoId={video.id} books={books} />
         </>
       )}
       {video.bookmarks && video.bookmarks.length != 0 && (
         <Bookmarks bookmarks={video.bookmarks} ytPlayer={YTPlayer} />
       )}
+      <div className='flex flex-wrap items-center'>
+        {videoBooks &&
+          videoBooks.length != 0 &&
+          videoBooks.map((book) => (
+            <VideoBook key={book.id} videoBook={book} />
+          ))}
+      </div>
     </div>
   );
 };

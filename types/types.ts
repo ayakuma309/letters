@@ -39,7 +39,7 @@ export interface BookType {
   description?: string | undefined;
   image: string | undefined;
   infoLink: string;
-  tags: TagType[];
+  tags?: TagType[];
 }
 export type BookSearchResultType = Omit<BookType, 'tags'>;
 
@@ -53,4 +53,12 @@ export type GoogleBooksResponse = {
     };
     infoLink?: string;
   };
+};
+
+//videoBook投稿
+export type BookVideoType = Pick<BookType, 'id' | 'title'>;
+
+export type BookVideoListType = {
+  id: number;
+  book: Pick<BookType, 'id' | 'image' | 'infoLink'>;
 };

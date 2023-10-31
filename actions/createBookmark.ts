@@ -12,7 +12,7 @@ const createBookmark = async ({
   try {
     const bookmark = await prisma.bookmark.create({
       data: {
-        youTubeId: Number(videoId),
+        youTubeId: parseInt(videoId),
         title,
         startAt,
       },
