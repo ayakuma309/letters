@@ -14,7 +14,7 @@ const BookmarkForm: React.FC<VideoItemType> = ({
 }) => {
   return (
     <>
-      <div className='text-center'>
+      <div className='text-center my-3'>
         <button
           className='p-4 bg-orange-500 rounded-md text-white font-bold'
           onClick={handleMakeTimestamp}
