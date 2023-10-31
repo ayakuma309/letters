@@ -25,7 +25,7 @@ const Book: React.FC<BookProps> = ({ book }) => {
         title: '削除しました',
         variant: 'success',
       });
-      router.push('/qiitas');
+      router.push('/books');
       router.refresh();
     } catch (err) {
       toast({

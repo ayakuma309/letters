@@ -3,15 +3,15 @@ import Select from 'react-select';
 import { BookVideoType, OptionType } from '@/types/types';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
-import { toast } from '../ui/use-toast';
-import { Button } from '../ui/button';
+import { toast } from '@/components/ui/use-toast';
+import { Button } from '@/components/ui/button';
 
-type VideoBooksProps = {
+type VideoBookFormProps = {
   videoId: number;
   books: BookVideoType[];
 };
 
-const VideoBooks: React.FC<VideoBooksProps> = ({ videoId, books }) => {
+const VideoBookForm: React.FC<VideoBookFormProps> = ({ videoId, books }) => {
   const router = useRouter();
   const [selectedBook, setSelectedBook] = useState<OptionType>();
 
@@ -62,4 +62,4 @@ const VideoBooks: React.FC<VideoBooksProps> = ({ videoId, books }) => {
   );
 };
 
-export default VideoBooks;
+export default VideoBookForm;

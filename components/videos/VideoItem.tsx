@@ -8,8 +8,8 @@ import useNewBookmarkModal from '../hooks/useNewBookmarkModal';
 import { useSession } from 'next-auth/react';
 import Bookmarks from '../timestamp/Bookmarks';
 import BookmarkForm from '../timestamp/BookmarkForm';
-import VideoBooks from '../videoBooks/VideoBooks';
-import Book from '../books/Book';
+import VideoBookForm from './books/VideoBookForm';
+import VideoBook from './books/VideoBook';
 
 type VideoItemType = {
   video: VideoType;
@@ -65,7 +65,7 @@ const VideoItem: React.FC<VideoItemType> = ({ video, books, videoBooks }) => {
             time={time}
             handleMakeTimestamp={handleMakeTimestamp}
           />
-          <VideoBooks videoId={video.id} books={books} />
+          <VideoBookForm videoId={video.id} books={books} />
         </>
       )}
       {video.bookmarks && video.bookmarks.length != 0 && (
@@ -74,7 +74,7 @@ const VideoItem: React.FC<VideoItemType> = ({ video, books, videoBooks }) => {
       <div className='flex flex-wrap items-center'>
         {videoBooks &&
           videoBooks.length != 0 &&
-          videoBooks.map((book) => <Book key={book.id} book={book} />)}
+          videoBooks.map((book) => <VideoBook key={book.id} book={book} />)}
       </div>
     </div>
   );
