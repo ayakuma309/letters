@@ -12,7 +12,7 @@ const createVideoBook = async ({
     const videoBooks = await prisma.youTubeBook.create({
       data: {
         youTubeId: videoId,
-        bookId: Number(bookId),
+        bookId: parseInt(bookId),
       },
     });
     return videoBooks;
