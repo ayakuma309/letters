@@ -1,6 +1,6 @@
 import prisma from '@/lib/prisma';
 
-const getVideo = async ({ id }: { id: string }) => {
+const getVideo = async (id: string) => {
   try {
     const video = await prisma.youTube.findUnique({
       where: { id: parseInt(id) },

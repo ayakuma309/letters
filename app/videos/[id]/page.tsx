@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import getVideoById from '@/actions/getVideoById';
 import VideoItem from '@/components/videos/VideoItem';
 import getBook from '@/actions/getBook';
+import getVideoBook from '@/actions/getVideoBook';
 
 export const metadata: Metadata = {
   title: 'YouTube',
@@ -16,7 +17,11 @@ type Props = {
 };
 
 export default async function Page({ params: { id } }: Props) {
-  const [video, books] = await Promise.all([getVideoById({ id }), getBook()]);
+  const [video, books, videoBooks] = await Promise.all([
+    getVideoById(id),
+    getBook(),
+    getVideoBook(id),
+  ]);
   if (!video || !books) {
     return (
       <div className='text-center'>
@@ -26,7 +31,7 @@ export default async function Page({ params: { id } }: Props) {
   }
   return (
     <div className='space-y-2'>
-      <VideoItem video={video} books={books} />
+      <VideoItem video={video} books={books} videoBooks={videoBooks} />
     </div>
   );
 }
