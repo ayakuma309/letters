@@ -73,7 +73,7 @@ const QiitaItem: React.FC<Props> = ({ item }) => {
           <p className='text-gray-700'>{item.user.name}</p>
         </div>
         {session?.user && (
-          <>
+          <form onSubmit={handleSubmitQiita}>
             <TagSelect
               value={selectedTags}
               onChange={(tags) => setSelectedTags(tags)}
@@ -82,11 +82,10 @@ const QiitaItem: React.FC<Props> = ({ item }) => {
             <button
               type='submit'
               className='mt-2 bg-gray-700 hover:bg-green-800 duration-200 text-white font-semibold py-2 px-3 rounded-lg hover:shadow-lg block'
-              onClick={handleSubmitQiita}
             >
               <BsBookmark />
             </button>
-          </>
+          </form>
         )}
       </div>
     </div>

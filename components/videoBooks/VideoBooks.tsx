@@ -4,6 +4,7 @@ import { BookVideoType, OptionType } from '@/types/types';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { toast } from '../ui/use-toast';
+import { Button } from '../ui/button';
 
 type VideoBooksProps = {
   videoId: number;
@@ -56,7 +57,7 @@ const VideoBooks: React.FC<VideoBooksProps> = ({ videoId, books }) => {
         }}
         placeholder='書籍を選択してください'
       />
-      <button>登録</button>
+      <Button>登録</Button>
     </form>
   );
 };
