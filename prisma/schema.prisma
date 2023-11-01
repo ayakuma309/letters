@@ -1,0 +1,124 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.Text
+  access_token       String?  @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.Text
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model YouTube {
+  id          Int       @id @default(autoincrement())
+  videoId     String    @unique
+  title       String
+  url         String
+  tweet       Int?
+  releaseAt   DateTime
+  tags        YouTubeTag[]
+  bookmarks   Bookmark[]
+  books YouTubeBook[]
+}
+
+model YouTubeTag {
+  id          Int         @id @default(autoincrement())
+  name        String      @unique
+  youTubes    YouTube[]
+}
+
+model Bookmark {
+  id          String     @id @default(uuid())
+  title       String
+  startAt     Int
+  youTubeId   Int
+  youTube     YouTube    @relation(fields: [youTubeId], references: [id], onDelete: Cascade)
+}
+
+model Qiita {
+  id              Int       @id @default(autoincrement())
+  qiitaId         String    @unique
+  title           String
+  url             String
+  profileImageUrl String
+  tags            QiitaTag[]
+}
+
+model QiitaTag {
+  id         Int      @id @default(autoincrement())
+  name       String   @unique
+  qiitas     Qiita[]
+}
+
+model Book {
+  id          Int       @id @default(autoincrement())
+  bookId      String    @unique
+  title       String
+  image       String
+  infoLink    String
+  tags        BookTag[]
+  youTubes YouTubeBook[]
+}
+
+model BookTag {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  books       Book[]
+}
+
+model YouTubeBook {
+  id          Int      @id @default(autoincrement())
+  youTubeId   Int
+  bookId      Int
+  youTube     YouTube  @relation(fields: [youTubeId], references: [id])
+  book        Book     @relation(fields: [bookId], references: [id])
+
+  @@unique([youTubeId, bookId])
+}
