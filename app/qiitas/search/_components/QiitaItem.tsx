@@ -1,5 +1,5 @@
-import { toast } from '@/components/ui/use-toast';
-import TagSelect from '@/components/videos/search/TagSelect';
+import { toast } from '@/app/_components/ui/use-toast';
+import TagSelect from '@/app/videos/search/_components/TagSelect';
 import { QiitaItemsType } from '@/types/qiitaTypes';
 import { OptionType } from '@/types/types';
 import axios from 'axios';
