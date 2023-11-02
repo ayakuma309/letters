@@ -4,9 +4,9 @@ import { useSession } from 'next-auth/react';
 import VideoTags from './VideoTags';
 import { VideoType } from '@/types/types';
 import axios from 'axios';
-import { toast } from '../ui/use-toast';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { toast } from '@/app/_components/ui/use-toast';
 
 type Props = {
   video: VideoType;

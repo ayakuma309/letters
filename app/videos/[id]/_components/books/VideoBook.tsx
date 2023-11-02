@@ -7,7 +7,7 @@ import { BsFillTrashFill } from 'react-icons/bs';
 import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { toast } from '@/components/ui/use-toast';
+import { toast } from '@/app/_components/ui/use-toast';
 
 type BookProps = {
   videoBook: BookVideoListType;
