@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import getRandomVideo from '@/actions/getRandomVideo';
-import RandomVideos from '@/components/videos/random/RandomVideos';
+import RandomVideos from './_components/RandomVideos';
 
 export const metadata: Metadata = {
   title: 'YouTube',

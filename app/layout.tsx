@@ -3,11 +3,11 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 // ログイン中のユーザー情報を取得する
-import AuthContext from '@/components/context/AuthContext';
+import AuthContext from '@/app/_components/context/AuthContext';
 import getCurrentUser from '@/actions/getCurrentUser';
-import Sidebar from '@/components/sidebar/Sidebar';
+import Sidebar from '@/app/_components/sidebar/Sidebar';
 
-import { Toaster } from '@/components/ui/toaster';
+import { Toaster } from '@/app/_components/ui/toaster';
 
 const inter = Inter({ subsets: ['latin'] });
 
