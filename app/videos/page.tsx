@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import getVideo from '@/actions/getVideo';
-import VideoItems from '@/components/videos/VideoItems';
+import VideoItems from './_components/VideoItems';
 
 export const metadata: Metadata = {
   title: 'YouTube',

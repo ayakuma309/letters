@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import getQiita from '@/actions/getQiita';
-import Qiitas from '@/components/qiitas/Qiitas';
+import Qiitas from '@/app/qiitas/_components/Qiitas';
 
 export const metadata: Metadata = {
   title: 'Qiita記事',

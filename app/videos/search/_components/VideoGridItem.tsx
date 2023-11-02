@@ -6,7 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import ja from 'date-fns/locale/ja';
 import TagSelect from './TagSelect';
 import axios from 'axios';
-import { toast } from '@/components/ui/use-toast';
+import { toast } from '@/app/_components/ui/use-toast';
 import { OptionType } from '@/types/types';
 import { videoTags } from '@/constants/videoTag';
 interface VideoGridItemProps {

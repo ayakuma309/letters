@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
 import { VideoType } from '@/types/types';
-import { useVideoTagSearch } from '../hooks/useTagSearch';
 import Video from './Video';
-import TagList from '../common/search/TagList';
 import { videoTags } from '@/constants/videoTag';
+import { useVideoTagSearch } from '@/app/_components/hooks/useTagSearch';
+import TagList from '@/app/_components/common/search/TagList';
 
 type VideoItemsProps = {
   videos: VideoType[];

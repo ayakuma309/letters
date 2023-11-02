@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
-import { useBookTagSearch } from '../hooks/useTagSearch';
-import TagList from '../common/search/TagList';
 import Book from './Book';
 import { BookType } from '@/types/types';
 import { bookTags } from '@/constants/bookTag';
+import TagList from '@/app/_components/common/search/TagList';
+import { useBookTagSearch } from '@/app/_components/hooks/useTagSearch';
 
 type BooksProps = {
   books: BookType[];

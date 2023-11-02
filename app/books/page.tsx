@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import getBook from '@/actions/getBook';
-import Books from '@/components/books/Books';
+import Books from './_components/Books';
 
 export const metadata: Metadata = {
   title: '書籍情報',

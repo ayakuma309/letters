@@ -5,7 +5,7 @@ import { BookSearchResultType, OptionType } from '@/types/types';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { toast } from '@/components/ui/use-toast';
+import { toast } from '@/app/_components/ui/use-toast';
 
 type Props = {
   book: BookSearchResultType;

@@ -3,8 +3,8 @@ import Select from 'react-select';
 import { BookVideoType, OptionType } from '@/types/types';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
-import { toast } from '@/components/ui/use-toast';
-import { Button } from '@/components/ui/button';
+import { toast } from '@/app/_components/ui/use-toast';
+import { Button } from '@/app/_components/ui/button';
 
 type VideoBookFormProps = {
   videoId: number;

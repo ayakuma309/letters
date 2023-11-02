@@ -4,7 +4,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/components/ui/tooltip';
+} from '@/app/_components/ui/tooltip';
 
 type MenuItemProps = {
   title: string;

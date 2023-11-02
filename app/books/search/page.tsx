@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import Search from '@/components/books/search/Search';
+import Search from './_components/Search';
 
 export const metadata: Metadata = {
   title: '書籍検索',

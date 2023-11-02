@@ -2,13 +2,13 @@
 import { BookVideoListType, BookVideoType, VideoType } from '@/types/types';
 import React, { useState } from 'react';
 import Youtube from 'react-youtube';
-import VideoTags from './VideoTags';
 import { TwitterShareButton } from 'react-share';
-import useNewBookmarkModal from '../hooks/useNewBookmarkModal';
 import { useSession } from 'next-auth/react';
-import Bookmarks from '../timestamp/Bookmarks';
-import BookmarkForm from '../timestamp/BookmarkForm';
+import useNewBookmarkModal from '@/app/_components/hooks/useNewBookmarkModal';
+import VideoTags from '../../_components/VideoTags';
+import BookmarkForm from '@/app/_components/timestamp/BookmarkForm';
 import VideoBookForm from './books/VideoBookForm';
+import Bookmarks from '@/app/_components/timestamp/Bookmarks';
 import VideoBook from './books/VideoBook';
 
 type VideoItemType = {

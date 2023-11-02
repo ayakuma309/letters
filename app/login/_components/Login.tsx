@@ -6,8 +6,8 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-} from '@/components/ui/card';
-import LoginButton from '@/components/auth/LoginButton';
+} from '@/app/_components/ui/card';
+import LoginButton from './LoginButton';
 
 // ログイン
 const Login = () => {

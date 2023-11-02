@@ -4,8 +4,8 @@ import { useEffect } from 'react';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { FcGoogle } from 'react-icons/fc';
-import { Button } from '@/components/ui/button';
-import { useToast } from '@/components/ui/use-toast';
+import { Button } from '@/app/_components/ui/button';
+import { useToast } from '@/app/_components/ui/use-toast';
 
 // ログインボタン
 const LoginButton = () => {

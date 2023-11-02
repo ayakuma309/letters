@@ -1,9 +1,9 @@
 import React from 'react';
 import { Metadata } from 'next';
 import getVideoById from '@/actions/getVideoById';
-import VideoItem from '@/components/videos/VideoItem';
 import getBook from '@/actions/getBook';
 import getVideoBook from '@/actions/getVideoBook';
+import VideoItem from './_components/VideoItem';
 
 export const metadata: Metadata = {
   title: 'YouTube',
