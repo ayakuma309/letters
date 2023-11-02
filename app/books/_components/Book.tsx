@@ -4,10 +4,10 @@ import { useSession } from 'next-auth/react';
 
 import React from 'react';
 import { BsFillTrashFill } from 'react-icons/bs';
-import { toast } from '../ui/use-toast';
 import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { toast } from '@/app/_components/ui/use-toast';
 
 type BookProps = {
   book: BookType;
