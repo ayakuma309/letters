@@ -29,7 +29,7 @@ const Menu: React.FC<MenuProps> = ({ currentUser }) => {
   };
 
   return (
-    <ul className='list-reset flex flex-row md:flex-col text-center'>
+    <ul className='list-reset flex flex-row sm:flex-col text-center'>
       <MenuItems menuItems={Menus} />
       {currentUser ? (
         <>

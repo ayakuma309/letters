@@ -36,7 +36,7 @@ const Video: React.FC<Props> = ({ video }) => {
   };
 
   return (
-    <div className='md:w-1/2 p-2'>
+    <div className='sm:w-5/6 sm:mx-auto md:w-1/2 p-2 w-1/2 overflow-y-scroll'>
       <div className='bg-white shadow-md rounded p-5 mb-4'>
         <div className='mb-4'>
           <Link href={`/videos/${video.id}`}>
@@ -46,21 +46,20 @@ const Video: React.FC<Props> = ({ video }) => {
               alt='youtube image'
             />
           </Link>
-          <p className='break-words'>{video.title}</p>
           <div className='flex justify-between mt-2'>
             {/* タグ情報を表示 */}
             {video.tags && video.tags.length > 0 && (
               <VideoTags tags={video.tags} />
             )}
-            {session?.user && (
-              <button
-                className='p-2 bg-red-500 rounded-md text-white font-bold'
-                onClick={handleDeletePost}
-              >
-                Delete
-              </button>
-            )}
           </div>
+          {session?.user && (
+            <button
+              className='p-1 m-2 bg-red-500 rounded-md text-white font-bold'
+              onClick={handleDeletePost}
+            >
+              Delete
+            </button>
+          )}
         </div>
       </div>
     </div>
