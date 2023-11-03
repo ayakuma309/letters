@@ -10,6 +10,7 @@ import BookmarkForm from './timestamp/BookmarkForm';
 import VideoBookForm from './books/VideoBookForm';
 import Bookmarks from './timestamp/Bookmarks';
 import VideoBook from './books/VideoBook';
+import { Role } from '@prisma/client';
 
 type VideoItemType = {
   video: VideoType;
@@ -64,7 +65,7 @@ const VideoItem: React.FC<VideoItemType> = ({ video, books, videoBooks }) => {
           </div>
         </div>
       </div>
-      {session?.user && (
+      {session?.user.role === Role.ADMIN && (
         <>
           <BookmarkForm
             video={video}
