@@ -6,9 +6,9 @@ import { TwitterShareButton } from 'react-share';
 import { useSession } from 'next-auth/react';
 import useNewBookmarkModal from '@/app/_components/hooks/useNewBookmarkModal';
 import VideoTags from '../../_components/VideoTags';
-import BookmarkForm from '@/app/_components/timestamp/BookmarkForm';
+import BookmarkForm from './timestamp/BookmarkForm';
 import VideoBookForm from './books/VideoBookForm';
-import Bookmarks from '@/app/_components/timestamp/Bookmarks';
+import Bookmarks from './timestamp/Bookmarks';
 import VideoBook from './books/VideoBook';
 
 type VideoItemType = {
