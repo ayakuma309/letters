@@ -52,6 +52,7 @@
     "zustand": "^4.4.4"
   },
   "devDependencies": {
+    "@types/gtag.js": "^0.0.17",
     "@types/react-datepicker": "^4.19.1",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
