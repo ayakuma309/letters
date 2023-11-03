@@ -9,6 +9,7 @@ import Sidebar from '@/app/_components/sidebar/Sidebar';
 
 import { Toaster } from '@/app/_components/ui/toaster';
 import MenuItem from './_components/sidebar/MenuItem';
+import GoogleAnalytics from './_components/common/GoogleAnalytics/GoogleAnalytics';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -36,6 +37,9 @@ export default async function RootLayout({
 
   return (
     <html lang='ja'>
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body className={inter.className}>
         <AuthContext>
           <div className='flex min-h-screen flex-col bg-gray-100'>
