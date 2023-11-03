@@ -8,12 +8,24 @@ import getCurrentUser from '@/actions/getCurrentUser';
 import Sidebar from '@/app/_components/sidebar/Sidebar';
 
 import { Toaster } from '@/app/_components/ui/toaster';
+import MenuItem from './_components/sidebar/MenuItem';
+import GoogleAnalytics from './_components/common/GoogleAnalytics/GoogleAnalytics';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Letters Tube',
-  description: 'Letters Tube',
+  description: '情報をまとめました',
+  metadataBase: new URL('https://letters-tube.vercel.app/'),
+  openGraph: {
+    title: 'Letters Tube',
+    description: '情報をまとめました',
+  },
+  twitter: {
+    title: 'Letters Tube',
+    description: '情報をまとめました',
+    card: 'summary_large_image',
+  },
 };
 
 export default async function RootLayout({
@@ -25,6 +37,9 @@ export default async function RootLayout({
 
   return (
     <html lang='ja'>
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body className={inter.className}>
         <AuthContext>
           <div className='flex min-h-screen flex-col bg-gray-100'>
@@ -37,6 +52,20 @@ export default async function RootLayout({
               {/* フッター */}
               <footer className='py-5'>
                 <div className='text-center text-sm'>
+                  <div className='flex justify-center space-x-5'>
+                    <a
+                      href='https://twitter.com/ZCunkuma'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <MenuItem
+                        title={'お問い合わせはこちらからお願いします'}
+                        src={
+                          <img src='https://img.icons8.com/fluent/30/000000/twitter.png' />
+                        }
+                      />
+                    </a>
+                  </div>
                   Copyright © All rights reserved | Letters Tube
                 </div>
               </footer>

@@ -36,7 +36,7 @@ const Video: React.FC<Props> = ({ video }) => {
   };
 
   return (
-    <div className='sm:w-5/6 sm:mx-auto md:w-1/2 p-2 w-1/2 overflow-y-scroll'>
+    <div className='sm:mx-auto md:w-1/2 p-2 w-1/2 overflow-y-scroll'>
       <div className='bg-white shadow-md rounded p-5 mb-4'>
         <div className='mb-4'>
           <Link href={`/videos/${video.id}`}>

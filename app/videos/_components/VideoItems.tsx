@@ -14,7 +14,7 @@ const VideoItems: React.FC<VideoItemsProps> = ({ videos }) => {
   const { searchResults, handleSearch } = useVideoTagSearch(videos);
 
   return (
-    <div className='container mx-auto py-4'>
+    <div className='mx-auto py-4 sm:ml-20'>
       <TagList handleSearch={handleSearch} tagOptions={videoTags} />
       <div className='flex flex-wrap justify-between'>
         {searchResults &&

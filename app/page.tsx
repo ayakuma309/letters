@@ -1,6 +1,6 @@
 const Home = async () => {
   return (
-    <div className='flex flex-col min-h-screen items-center justify-center p-24'>
+    <div className='flex flex-col min-h-screen items-center justify-center p-4 sm:p-24'>
       <div className='text-gray-600'>
         <div className='flex flex-col  items-center text-center justify-center'>
           <h1 className='sm:text-7xl text-5xl mb-4 font-medium text-red-600'>

@@ -12,13 +12,13 @@ type BooksProps = {
 const Books: React.FC<BooksProps> = ({ books }) => {
   const { searchResults, handleSearch } = useBookTagSearch(books);
   return (
-    <>
+    <div className='mx-auto py-4 sm:ml-20'>
       <TagList handleSearch={handleSearch} tagOptions={bookTags} />
       <div className='flex flex-wrap items-center'>
         {searchResults &&
           searchResults.map((book) => <Book key={book.id} book={book} />)}
       </div>
-    </>
+    </div>
   );
 };
 

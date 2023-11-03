@@ -1,4 +1,4 @@
-import { User } from '@prisma/client';
+import { Role, User } from '@prisma/client';
 import React from 'react';
 import Link from 'next/link';
 import { signOut } from 'next-auth/react';
@@ -27,19 +27,24 @@ const Menu: React.FC<MenuProps> = ({ currentUser }) => {
       });
     }
   };
-
   return (
     <ul className='list-reset flex flex-row sm:flex-col text-center'>
       <MenuItems menuItems={Menus} />
+      {/* ログインしてるかどうか */}
       {currentUser ? (
         <>
-          <MenuItems menuItems={LoginAfterMenus} />
-          <div
-            onClick={handleLogout}
-            className='flex items-center gap-x-4 p-3 text-base font-normal rounded-lg cursor-pointer dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'
-          >
-            <MenuItem title={'LogOut'} src={<IoMdLogOut />} />
-          </div>
+          {/* adminのみ表示 */}
+          {currentUser.role === Role.ADMIN && (
+            <>
+              <MenuItems menuItems={LoginAfterMenus} />
+              <div
+                onClick={handleLogout}
+                className='flex items-center gap-x-4 p-3 text-base font-normal rounded-lg cursor-pointer dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'
+              >
+                <MenuItem title={'LogOut'} src={<IoMdLogOut />} />
+              </div>
+            </>
+          )}
         </>
       ) : (
         <Link href={'/login'}>

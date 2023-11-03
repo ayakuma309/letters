@@ -12,13 +12,13 @@ type QiitasProps = {
 const Qiitas: React.FC<QiitasProps> = ({ qiitas }) => {
   const { searchResults, handleSearch } = useQiitaTagSearch(qiitas);
   return (
-    <>
+    <div className='mx-auto py-4 sm:ml-20'>
       <TagList handleSearch={handleSearch} tagOptions={qiitaTags} />
       {searchResults &&
         searchResults.map((qiita) => (
           <QiitaArticle key={qiita.id} {...qiita} />
         ))}
-    </>
+    </div>
   );
 };
 
