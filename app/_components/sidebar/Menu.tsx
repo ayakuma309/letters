@@ -1,9 +1,9 @@
 import { Role, User } from '@prisma/client';
 import React from 'react';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { signOut } from 'next-auth/react';
 
-import { IoMdLogIn } from 'react-icons/io';
+// import { IoMdLogIn } from 'react-icons/io';
 import { IoMdLogOut } from 'react-icons/io';
 import { LoginAfterMenus, Menus } from '@/constants/menu';
 
@@ -30,29 +30,23 @@ const Menu: React.FC<MenuProps> = ({ currentUser }) => {
   return (
     <ul className='list-reset flex flex-row sm:flex-col text-center'>
       <MenuItems menuItems={Menus} />
-      {/* ログインしてるかどうか */}
-      {currentUser ? (
+      {currentUser && currentUser.role === Role.ADMIN && (
         <>
-          {/* adminのみ表示 */}
-          {currentUser.role === Role.ADMIN && (
-            <>
-              <MenuItems menuItems={LoginAfterMenus} />
-              <div
-                onClick={handleLogout}
-                className='flex items-center gap-x-4 p-3 text-base font-normal rounded-lg cursor-pointer dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'
-              >
-                <MenuItem title={'LogOut'} src={<IoMdLogOut />} />
-              </div>
-            </>
-          )}
-        </>
-      ) : (
-        <Link href={'/login'}>
-          <div className='flex items-center gap-x-4 p-3 text-base font-normal rounded-lg cursor-pointer dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'>
-            <MenuItem title={'LogIn'} src={<IoMdLogIn />} />
+          <MenuItems menuItems={LoginAfterMenus} />
+          <div
+            onClick={handleLogout}
+            className='flex items-center gap-x-4 p-3 text-base font-normal rounded-lg cursor-pointer dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'
+          >
+            <MenuItem title={'LogOut'} src={<IoMdLogOut />} />
           </div>
-        </Link>
+        </>
       )}
+      {/* ログインしてからの機能がないので後で拡張したときに追加する */}
+      {/* <Link href={'/login'}>
+        <div className='flex items-center gap-x-4 p-3 text-base font-normal rounded-lg cursor-pointer dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'>
+          <MenuItem title={'LogIn'} src={<IoMdLogIn />} />
+        </div>
+      </Link> */}
     </ul>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import BookmarkItem from './Bookmark';
-import { toast } from '../ui/use-toast';
+import { toast } from '../../../../_components/ui/use-toast';
 import axios from 'axios';
 import { Bookmark } from '@prisma/client';
 

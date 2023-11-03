@@ -23,7 +23,6 @@ const getCurrentUser = async () => {
     if (!response) {
       return null;
     }
-
     return response;
   } catch (error) {
     return null;

@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { IoMdClose } from 'react-icons/io';
-import { Button } from '../ui/button';
+import { Button } from '../../../../_components/ui/button';
 
 type ModalProps = {
   isOpen?: boolean;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsFillTrashFill } from 'react-icons/bs';
 import { useSession } from 'next-auth/react';
-import useTimeFormatter from '../hooks/useTimeFormatter';
+import useTimeFormatter from '../../../../_components/hooks/useTimeFormatter';
 import { Bookmark } from '@prisma/client';
 
 interface BookmarkProps {

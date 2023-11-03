@@ -8,6 +8,7 @@ import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { toast } from '@/app/_components/ui/use-toast';
+import { Role } from '@prisma/client';
 
 type BookProps = {
   book: BookType;
@@ -40,7 +41,7 @@ const Book: React.FC<BookProps> = ({ book }) => {
         <Link href={book.infoLink} rel='noopener noreferrer' target='_blank'>
           <img className='w-100 h-100' alt='User Avatar' src={book.image} />
         </Link>
-        {session?.user && (
+        {session?.user.role === Role.ADMIN && (
           <button
             className='p-1 rounded-md font-bold text-2xl'
             onClick={() => handleDelete(book.id)}

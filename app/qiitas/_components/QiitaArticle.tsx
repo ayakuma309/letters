@@ -5,6 +5,7 @@ import { useSession } from 'next-auth/react';
 import { toast } from '@/app/_components/ui/use-toast';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import { Role } from '@prisma/client';
 
 const QiitaArticle: React.FC<QiitaArticleType> = ({
   id,
@@ -14,7 +15,6 @@ const QiitaArticle: React.FC<QiitaArticleType> = ({
   profileImageUrl,
 }) => {
   const { data: session } = useSession();
-
   const handleDeleteQiita = async (id: number) => {
     const router = useRouter();
 
@@ -63,7 +63,7 @@ const QiitaArticle: React.FC<QiitaArticleType> = ({
             src={profileImageUrl}
           />
         </div>
-        {session?.user && (
+        {session?.user.role === Role.ADMIN && (
           <button
             className='p-1 rounded-md font-bold text-2xl'
             onClick={() => handleDeleteQiita(id)}
