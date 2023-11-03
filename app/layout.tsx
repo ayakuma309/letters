@@ -14,7 +14,17 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Letters Tube',
-  description: 'Letters Tube',
+  description: '情報をまとめました',
+  metadataBase: new URL('https://letters-tube.vercel.app/'),
+  openGraph: {
+    title: 'Letters Tube',
+    description: '情報をまとめました',
+  },
+  twitter: {
+    title: 'Letters Tube',
+    description: '情報をまとめました',
+    card: 'summary_large_image',
+  },
 };
 
 export default async function RootLayout({
