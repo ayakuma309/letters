@@ -7,6 +7,7 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { toast } from '@/app/_components/ui/use-toast';
+import { Role } from '@prisma/client';
 
 type Props = {
   video: VideoType;
@@ -52,7 +53,7 @@ const Video: React.FC<Props> = ({ video }) => {
               <VideoTags tags={video.tags} />
             )}
           </div>
-          {session?.user && (
+          {session?.user.role === Role.ADMIN && (
             <button
               className='p-1 m-2 bg-red-500 rounded-md text-white font-bold'
               onClick={handleDeletePost}
