@@ -24,7 +24,9 @@ const getCurrentUser = async () => {
       return null;
     }
 
-    return response;
+    //roleとidだけ返す
+    const { role, id } = response;
+    return { role, id };
   } catch (error) {
     return null;
   }
