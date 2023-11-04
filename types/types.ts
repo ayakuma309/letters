@@ -1,4 +1,6 @@
-import { Bookmark } from '@prisma/client';
+import { Bookmark, User } from '@prisma/client';
+
+export type UserType = Pick<User, 'id' | 'role'>;
 
 //modal
 export type ModalType = {

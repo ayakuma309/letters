@@ -1,8 +1,9 @@
-import NextAuth, { NextAuthOptions } from 'next-auth';
+import NextAuth, { NextAuthOptions, Session } from 'next-auth';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 
 import GoogleProvider from 'next-auth/providers/google';
 import prisma from '@/lib/prisma';
+import { JWT } from 'next-auth/jwt';
 
 // NextAuth設定
 export const authOptions: NextAuthOptions = {
@@ -18,6 +19,17 @@ export const authOptions: NextAuthOptions = {
   ],
   session: {
     strategy: 'jwt',
+    maxAge: 30 * 24 * 60 * 60,
+  },
+  callbacks: {
+    jwt: async ({ token, user }: { token: JWT; user: any }) => {
+      if (user) token.role = user.role;
+      return token;
+    },
+    session: ({ session, token }: { session: Session; token: JWT }) => {
+      session.user.role = token.role;
+      return session;
+    },
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
