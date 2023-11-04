@@ -16,7 +16,7 @@ export default async function Page() {
   }
 
   return (
-    <div className='space-y-2'>
+    <div className='sm:ml-20 mx-auto mt-10 py-4'>
       <RandomVideos videos={randomVideos} />
     </div>
   );

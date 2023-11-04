@@ -12,7 +12,7 @@ type QiitasProps = {
 const Qiitas: React.FC<QiitasProps> = ({ qiitas }) => {
   const { searchResults, handleSearch } = useQiitaTagSearch(qiitas);
   return (
-    <div className='mx-auto py-4 sm:ml-20'>
+    <div className='py-4'>
       <TagList handleSearch={handleSearch} tagOptions={qiitaTags} />
       <div className='flex flex-col items-center justify-center'>
         {searchResults &&

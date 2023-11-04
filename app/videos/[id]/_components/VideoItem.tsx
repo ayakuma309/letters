@@ -39,7 +39,7 @@ const VideoItem: React.FC<VideoItemType> = ({ video, books, videoBooks }) => {
     width: '100%',
   };
   return (
-    <div className='container mx-auto px-4 py-8'>
+    <div className='container px-4 py-8'>
       <div className='bg-white shadow-md rounded p-4 mb-4'>
         <div className='mb-4'>
           <div className='video-container'>

@@ -34,10 +34,10 @@ const Bookmarks: React.FC<BookmarksProps> = ({ bookmarks, ytPlayer }) => {
   };
 
   return (
-    <div className='flex justify-center'>
+    <div className='flex flex-col justify-center bg-white shadow-md rounded p-4 mb-4 mt-10'>
       {latestBookmarks &&
         latestBookmarks.map((bookmark) => (
-          <div className='bg-white shadow-md rounded p-4 mb-4 w-80 mt-10'>
+          <div className=''>
             <BookmarkItem
               key={bookmark.id}
               ytPlayer={ytPlayer}
