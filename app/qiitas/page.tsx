@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default async function Page() {
   const qiitas = await getQiita();
   return (
-    <div className='space-y-2 mx-auto'>
+    <div className='mx-auto'>
       <Qiitas qiitas={qiitas} />
     </div>
   );

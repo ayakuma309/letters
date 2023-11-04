@@ -16,7 +16,7 @@ export default async function Page() {
   }
 
   return (
-    <div className='ml-20 mt-10'>
+    <div className='mx-auto'>
       <Books books={books} />
     </div>
   );
