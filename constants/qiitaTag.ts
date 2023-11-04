@@ -14,6 +14,7 @@ export const qiitaTags = [
   { value: 'Firebase', label: 'Firebase' },
   { value: 'AWS', label: 'AWS' },
   { value: 'Heroku', label: 'Heroku' },
+  { value: 'Netlify', label: 'Netlify' },
   { value: 'LINE', label: 'LINE' },
   { value: 'LINEbot', label: 'LINEbot' },
   { value: 'LIFF', label: 'LIFF' },

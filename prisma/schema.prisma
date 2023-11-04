@@ -107,8 +107,8 @@ model Book {
   id          Int       @id @default(autoincrement())
   bookId      String    @unique
   title       String
-  image       String
-  infoLink    String
+  image       String    @db.Text
+  infoLink    String    @db.Text
   tags        BookTag[]
   youTubes YouTubeBook[]
 }
