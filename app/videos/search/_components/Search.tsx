@@ -1,26 +1,40 @@
 'use client';
 import React, { useState } from 'react';
-import useSWR, { mutate } from 'swr';
-import { fetchSearchData } from '@/lib/youtube';
 import VideoGrid from './VideoGrid';
 import VideoGridItem from './VideoGridItem';
+import axios from 'axios';
+import { params } from '../../../../lib/youtube';
 
-const Search = () => {
-  const [term, setTerm] = useState('エンジニア転職チャンネル');
-  const { data, error } = useSWR(`/search?q=${term}`, fetchSearchData, {
-    revalidateOnFocus: false, // フォーカス時の再フェッチを無効にする
-  });
+type VideoResponseProps = {
+  id: {
+    videoId: string;
+  };
+  snippet: {
+    title: string;
+    thumbnails: {
+      medium: {
+        url: string;
+      };
+    };
+  };
+};
+const Search = ({ videos }: any) => {
+  const [term, setTerm] = useState('');
+  const [searchItems, setSearchItems] = useState(videos);
 
-  const searchItems =
-    data && data.data && data.data.items ? data.data.items : [];
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (term.trim() === '') {
-      return;
-    }
-    // データを再フェッチ
-    mutate(`/search?q=${term}`);
+
+    const res = await axios.get(
+      'https://www.googleapis.com/youtube/v3/search',
+      {
+        params: {
+          ...params,
+          q: term,
+        },
+      }
+    );
+    setSearchItems(res.data.items);
   };
 
   return (
@@ -42,10 +56,9 @@ const Search = () => {
           </button>
         </form>
       </div>
-      {error && <div>エラーが発生しました。</div>}
       <VideoGrid>
         {searchItems &&
-          searchItems.map((search) => (
+          searchItems.map((search: VideoResponseProps) => (
             <VideoGridItem
               id={search.id.videoId}
               key={search.id.videoId}

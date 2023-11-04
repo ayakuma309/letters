@@ -37,7 +37,7 @@ const QiitaArticle: React.FC<QiitaArticleType> = ({
   };
 
   return (
-    <div className='mb-3 py-3 px-8  rounded-lg shadow-lg w-10/12'>
+    <div className='mb-3 py-3 px-8  rounded-md shadow-lg w-10/12'>
       <p className='text-center font-bold  text-blue-800 mb-4'>
         <a href={url} target='_blank' rel='noopener noreferrer'>
           {title}
@@ -48,7 +48,7 @@ const QiitaArticle: React.FC<QiitaArticleType> = ({
           tags.map((tag, index) => (
             <span
               key={index}
-              className='inline-block bg-gray-100 shadow-lg rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2'
+              className='inline-block bg-gray-100 shadow-md rounded-md px-3 py-1 text-sm font-semibold text-gray-700 mr-2'
               style={{ backgroundColor: '#9bca77' }}
             >
               {tag.name}

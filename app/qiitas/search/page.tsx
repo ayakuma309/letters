@@ -18,7 +18,7 @@ export default async function Page() {
     redirect('/login');
   }
   return (
-    <div className='space-y-2'>
+    <div className='ml-20 mt-10'>
       <Search />
     </div>
   );

@@ -14,10 +14,12 @@ const Qiitas: React.FC<QiitasProps> = ({ qiitas }) => {
   return (
     <div className='mx-auto py-4 sm:ml-20'>
       <TagList handleSearch={handleSearch} tagOptions={qiitaTags} />
-      {searchResults &&
-        searchResults.map((qiita) => (
-          <QiitaArticle key={qiita.id} {...qiita} />
-        ))}
+      <div className='flex flex-col items-center justify-center'>
+        {searchResults &&
+          searchResults.map((qiita) => (
+            <QiitaArticle key={qiita.id} {...qiita} />
+          ))}
+      </div>
     </div>
   );
 };
