@@ -34,7 +34,7 @@ const VideoBookForm: React.FC<VideoBookFormProps> = ({ videoId, books }) => {
           title: '投稿しました',
           variant: 'success',
         });
-        router.push('/');
+        router.push(`videos/${videoId}`);
         router.refresh();
       }
     } catch (err) {
