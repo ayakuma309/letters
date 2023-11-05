@@ -76,7 +76,11 @@ const VideoItem: React.FC<VideoItemType> = ({ video, books, videoBooks }) => {
         </>
       )}
       {video.bookmarks && video.bookmarks.length != 0 && (
-        <Bookmarks bookmarks={video.bookmarks} ytPlayer={YTPlayer} />
+        <Bookmarks
+          key={video.id}
+          bookmarks={video.bookmarks}
+          ytPlayer={YTPlayer}
+        />
       )}
       <div className='flex flex-wrap items-center'>
         {videoBooks &&
