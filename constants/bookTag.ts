@@ -1,6 +1,5 @@
 export const bookTags = [
   { value: 'GitHub', label: 'GitHub' },
-  { value: 'HTML/CSS', label: 'HTML/CSS' },
   { value: 'JavaScript', label: 'JavaScript' },
   { value: 'TypeScript', label: 'TypeScript' },
   { value: 'React', label: 'React' },
