@@ -31,8 +31,8 @@ const QiitaItem: React.FC<Props> = ({ item }) => {
         profileImageUrl: item.user.profile_image_url,
         tags: selectedTagNames,
       });
-      router.push('/qiitas');
       router.refresh();
+      router.push('/qiitas');
       toast({
         title: 'Qiita記事を保存しました',
         variant: 'success',

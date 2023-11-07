@@ -32,8 +32,8 @@ const BookItem: React.FC<Props> = ({ book }) => {
       });
 
       setSelectedTags([]);
-      router.push('/books');
       router.refresh();
+      router.push('/books');
       toast({
         title: '投稿しました',
         variant: 'success',
