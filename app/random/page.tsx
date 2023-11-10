@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Metadata } from 'next';
 import getRandomVideo from '@/actions/getRandomVideo';
 import RandomVideos from './_components/RandomVideos';
+import Loading from '../loading';
 
 export const metadata: Metadata = {
   title: 'YouTube',
@@ -17,7 +18,9 @@ export default async function Page() {
 
   return (
     <div className='sm:ml-20 mx-auto mt-10 py-4'>
-      <RandomVideos videos={randomVideos} />
+      <Suspense fallback={<Loading />}>
+        <RandomVideos videos={randomVideos} />
+      </Suspense>
     </div>
   );
 }
