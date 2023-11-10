@@ -26,13 +26,9 @@ const Bookmark: React.FC<BookmarkProps> = ({
     <>
       <div className='mb-4'>
         <div className='text-gray-700 break-all'>
-          <a
-            href='#'
-            onClick={timeToLink}
-            className='link'
-            style={{ color: '#2e63f5' }}
-          >
-            {useTimeFormatter(bookmark.startAt)} : {bookmark.title}
+          <a href='#' onClick={timeToLink} className='link text-blue-700'>
+            {useTimeFormatter(bookmark.startAt)} :{' '}
+            <span className='text-black font-bold'>{bookmark.title}</span>
           </a>
         </div>
         <div className='mt-2 mx-1'>

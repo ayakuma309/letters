@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Metadata } from 'next';
 import getVideo from '@/actions/getVideo';
 import VideoItems from './_components/VideoItems';
+import Loading from '../loading';
 
 export const metadata: Metadata = {
   title: 'YouTube',
@@ -17,7 +18,9 @@ export default async function Page() {
 
   return (
     <div className='sm:ml-20 mx-auto mt-10 py-4'>
-      <VideoItems videos={videos} />
+      <Suspense fallback={<Loading />}>
+        <VideoItems videos={videos} />
+      </Suspense>
     </div>
   );
 }

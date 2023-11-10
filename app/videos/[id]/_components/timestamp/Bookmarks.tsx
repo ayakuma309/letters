@@ -13,7 +13,7 @@ const Bookmarks: React.FC<BookmarksProps> = ({ bookmarks, ytPlayer }) => {
   const [latestBookmarks, setLatestBookmarks] = useState<Bookmark[]>(bookmarks);
   // 削除
   const handleDeleteBookmark = async (bookmarkId: string) => {
-    const shouldDelete = window.confirm('このコメントを削除しますか？');
+    const shouldDelete = window.confirm('このタイムスタンプを削除しますか？');
     if (!shouldDelete) return;
 
     try {
@@ -22,12 +22,12 @@ const Bookmarks: React.FC<BookmarksProps> = ({ bookmarks, ytPlayer }) => {
         prevBookmark.filter((bookmark) => bookmark.id !== bookmarkId)
       );
       toast({
-        title: 'コメントを削除しました',
+        title: 'タイムスタンプを削除しました',
         variant: 'success',
       });
     } catch (err) {
       toast({
-        title: 'コメントの削除に失敗しました',
+        title: 'タイムスタンプの削除に失敗しました',
         variant: 'destructive',
       });
     }
@@ -37,14 +37,12 @@ const Bookmarks: React.FC<BookmarksProps> = ({ bookmarks, ytPlayer }) => {
     <div className='flex flex-col justify-center bg-white shadow-md rounded p-4 mb-4 mt-10'>
       {latestBookmarks &&
         latestBookmarks.map((bookmark) => (
-          <div className=''>
-            <BookmarkItem
-              key={bookmark.id}
-              ytPlayer={ytPlayer}
-              bookmark={bookmark}
-              handleDelete={handleDeleteBookmark}
-            />
-          </div>
+          <BookmarkItem
+            key={bookmark.id}
+            ytPlayer={ytPlayer}
+            bookmark={bookmark}
+            handleDelete={handleDeleteBookmark}
+          />
         ))}
     </div>
   );

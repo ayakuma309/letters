@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 import { BookVideoType, OptionType } from '@/types/types';
-import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { toast } from '@/app/_components/ui/use-toast';
 import { Button } from '@/app/_components/ui/button';
@@ -12,7 +11,6 @@ type VideoBookFormProps = {
 };
 
 const VideoBookForm: React.FC<VideoBookFormProps> = ({ videoId, books }) => {
-  const router = useRouter();
   const [selectedBook, setSelectedBook] = useState<OptionType>();
 
   const BookList: OptionType[] = books.map((book) => ({
@@ -34,8 +32,6 @@ const VideoBookForm: React.FC<VideoBookFormProps> = ({ videoId, books }) => {
           title: '投稿しました',
           variant: 'success',
         });
-        router.push('/');
-        router.refresh();
       }
     } catch (err) {
       console.log(err);

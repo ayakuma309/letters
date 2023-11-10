@@ -25,8 +25,8 @@ const VideoBook: React.FC<BookProps> = ({ videoBook }) => {
         title: '削除しました',
         variant: 'success',
       });
-      router.push(`/`);
       router.refresh();
+      router.push(`/`);
     } catch (err) {
       toast({
         title: '削除に失敗しました',

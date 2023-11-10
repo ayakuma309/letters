@@ -5,13 +5,16 @@ import QiitaItem from './QiitaItem';
 function QiitaList({
   data,
   error,
+  isLoading,
 }: {
   data: QiitaItemsType[] | null;
-  error: any;
+  error: Error | null;
+  isLoading: boolean;
 }) {
+  if (error) return <div>データの読み込み中にエラーが発生しました。</div>;
+  if (isLoading) return <div>loading...</div>;
   return (
     <div>
-      {error && <div>データの読み込み中にエラーが発生しました。</div>}
       {data && (
         <div>
           {data.map((item: QiitaItemsType) => (

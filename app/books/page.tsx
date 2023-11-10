@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Metadata } from 'next';
 import getBook from '@/actions/getBook';
 import Books from './_components/Books';
+import Loading from '../loading';
 
 export const metadata: Metadata = {
   title: '書籍情報',
@@ -17,7 +18,9 @@ export default async function Page() {
 
   return (
     <div className='sm:ml-20 mx-auto mt-10 py-4'>
-      <Books books={books} />
+      <Suspense fallback={<Loading />}>
+        <Books books={books} />
+      </Suspense>
     </div>
   );
 }

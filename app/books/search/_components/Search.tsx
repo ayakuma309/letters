@@ -13,7 +13,7 @@ const Search = () => {
   //検索ボタンをクリックした時の処理
   //サーバーサイドのAPIを呼び出し書籍情報を取得する
   const apiUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
-  const { data, error } = useSWR(
+  const { data, error, isLoading } = useSWR(
     query ? `${apiUrl}${encodeURIComponent(query)}` : null,
     fetcher
   );
@@ -34,7 +34,7 @@ const Search = () => {
     <>
       <h1>書籍検索</h1>
       <BookSearchForm onSearch={onClickSearch} />
-      <BookList data={searchItems} error={error} />
+      <BookList data={searchItems} error={error} isLoading={isLoading} />
     </>
   );
 };

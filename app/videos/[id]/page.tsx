@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Metadata } from 'next';
 import getVideoById from '@/actions/getVideoById';
 import getBook from '@/actions/getBook';
 import getVideoBook from '@/actions/getVideoBook';
 import VideoItem from './_components/VideoItem';
+import Loading from '@/app/loading';
 
 export const metadata: Metadata = {
   title: 'YouTube',
@@ -31,7 +32,9 @@ export default async function Page({ params: { id } }: Props) {
   }
   return (
     <div className='sm:ml-20 mx-auto mt-10'>
-      <VideoItem video={video} books={books} videoBooks={videoBooks} />
+      <Suspense fallback={<Loading />}>
+        <VideoItem video={video} books={books} videoBooks={videoBooks} />
+      </Suspense>
     </div>
   );
 }

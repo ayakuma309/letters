@@ -11,7 +11,7 @@ function fetcher(url: string) {
 const Search = () => {
   const [query, setQuery] = useState('');
   const apiUrl = 'https://qiita.com/api/v2/items?per_page=25&query=';
-  const { data, error } = useSWR(
+  const { data, error, isLoading } = useSWR(
     query ? `${apiUrl}${encodeURIComponent(query)}` : null,
     fetcher
   );
@@ -19,13 +19,11 @@ const Search = () => {
   const handleSearch = (newQuery: string) => {
     setQuery(newQuery);
   };
-
   return (
     <>
       <h1>Qiita記事一覧</h1>
-
       <SearchForm onSearch={handleSearch} />
-      <QiitaList data={data} error={error} />
+      <QiitaList data={data} error={error} isLoading={isLoading} />
     </>
   );
 };

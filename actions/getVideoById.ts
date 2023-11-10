@@ -6,7 +6,11 @@ const getVideo = async (id: string) => {
       where: { id: parseInt(id) },
       include: {
         tags: true,
-        bookmarks: true,
+        bookmarks: {
+          orderBy: {
+            startAt: 'asc',
+          },
+        },
       },
     });
 

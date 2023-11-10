@@ -1,16 +1,20 @@
 import { BookSearchResultType } from '@/types/types';
 import BookItem from './BookItem';
+import Loading from '@/app/loading';
 
 function BookList({
   data,
   error,
+  isLoading,
 }: {
   data: BookSearchResultType[] | null;
-  error: any;
+  error: Error | null;
+  isLoading: boolean;
 }) {
+  if (error) return <div>データの読み込み中にエラーが発生しました。</div>;
+  if (isLoading) return <Loading />;
   return (
     <div>
-      {error && <div>データの読み込み中にエラーが発生しました。</div>}
       {data && (
         <div>
           {data.map((book: BookSearchResultType) => (
