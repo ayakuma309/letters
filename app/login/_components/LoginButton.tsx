@@ -7,8 +7,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { Button } from '@/app/_components/ui/button';
 import { useToast } from '@/app/_components/ui/use-toast';
 
-// ログインボタン
-const LoginButton = () => {
+export default function LoginButton() {
   const router = useRouter();
   const { toast } = useToast();
   const { data: session } = useSession();
@@ -48,6 +47,4 @@ const LoginButton = () => {
       Sign in with Google
     </Button>
   );
-};
-
-export default LoginButton;
+}
