@@ -4,12 +4,12 @@ import { toast } from '../../../../_components/ui/use-toast';
 import axios from 'axios';
 import { Bookmark } from '@prisma/client';
 
-interface BookmarksProps {
+interface Props {
   bookmarks: Bookmark[];
   ytPlayer: YT.Player | undefined;
 }
 
-const Bookmarks: React.FC<BookmarksProps> = ({ bookmarks, ytPlayer }) => {
+export default function Bookmarks({ bookmarks, ytPlayer }: Props) {
   const [latestBookmarks, setLatestBookmarks] = useState<Bookmark[]>(bookmarks);
   // 削除
   const handleDeleteBookmark = async (bookmarkId: string) => {
@@ -46,6 +46,4 @@ const Bookmarks: React.FC<BookmarksProps> = ({ bookmarks, ytPlayer }) => {
         ))}
     </div>
   );
-};
-
-export default Bookmarks;
+}

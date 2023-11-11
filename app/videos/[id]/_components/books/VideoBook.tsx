@@ -9,10 +9,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { toast } from '@/app/_components/ui/use-toast';
 
-type BookProps = {
+type Props = {
   videoBook: BookVideoListType;
 };
-const VideoBook: React.FC<BookProps> = ({ videoBook }) => {
+
+export default function VideoBook({ videoBook }: Props) {
   const { data: session } = useSession();
   const router = useRouter();
 
@@ -59,6 +60,4 @@ const VideoBook: React.FC<BookProps> = ({ videoBook }) => {
       </div>
     </div>
   );
-};
-
-export default VideoBook;
+}

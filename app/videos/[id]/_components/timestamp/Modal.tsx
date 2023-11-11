@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { IoMdClose } from 'react-icons/io';
 import { Button } from '../../../../_components/ui/button';
 
-type ModalProps = {
+type Props = {
   isOpen?: boolean;
   onClose: () => void;
   onSubmit: () => void;
@@ -14,8 +14,7 @@ type ModalProps = {
   del?: boolean;
 };
 
-// モーダル
-const Modal: React.FC<ModalProps> = ({
+export default function Modal({
   isOpen,
   onClose,
   onSubmit,
@@ -23,7 +22,7 @@ const Modal: React.FC<ModalProps> = ({
   body,
   footer,
   disabled,
-}) => {
+}: Props) {
   // 閉じる
   const handleClose = useCallback(() => {
     if (disabled) {
@@ -86,6 +85,4 @@ const Modal: React.FC<ModalProps> = ({
       </div>
     </>
   );
-};
-
-export default Modal;
+}

@@ -19,7 +19,7 @@ const schema = z.object({
 });
 
 // 新規投稿モーダル
-const NewBookmarkModal: React.FC<Props> = ({ time = 0, youTubeId }) => {
+export default function NewBookmarkModal({ time = 0, youTubeId }: Props) {
   const newBookmarkModal = useNewBookmarkModal();
   const [loading, setLoading] = useState(false);
   const {
@@ -85,6 +85,4 @@ const NewBookmarkModal: React.FC<Props> = ({ time = 0, youTubeId }) => {
       body={getBodyContent()}
     />
   );
-};
-
-export default NewBookmarkModal;
+}
