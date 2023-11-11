@@ -1,11 +1,12 @@
 import { OptionType } from '@/types/types';
 import React from 'react';
 
-type TagListProps = {
+type Props = {
   handleSearch: (tag: OptionType) => void;
   tagOptions: OptionType[];
 };
-const TagList: React.FC<TagListProps> = ({ handleSearch, tagOptions }) => {
+
+export default function TagList({ handleSearch, tagOptions }: Props) {
   return (
     <div className='mt-3 mb-5 flex flex-wrap p-2 mx-auto'>
       {tagOptions.map((tag) => (
@@ -17,6 +18,4 @@ const TagList: React.FC<TagListProps> = ({ handleSearch, tagOptions }) => {
       ))}
     </div>
   );
-};
-
-export default TagList;
+}
