@@ -1,24 +1,14 @@
 'use client';
 import React, { useState } from 'react';
-import VideoGrid from './VideoGrid';
 import VideoGridItem from './VideoGridItem';
 import axios from 'axios';
 import { params } from '../../../../lib/youtube';
+import { VideoResponseProps } from '@/types/types';
 
-type VideoResponseProps = {
-  id: {
-    videoId: string;
-  };
-  snippet: {
-    title: string;
-    thumbnails: {
-      medium: {
-        url: string;
-      };
-    };
-  };
+type Props = {
+  videos: VideoResponseProps[] | null;
 };
-const Search = ({ videos }: any) => {
+const Search = ({ videos }: Props) => {
   const [term, setTerm] = useState('');
   const [searchItems, setSearchItems] = useState(videos);
 
@@ -56,7 +46,7 @@ const Search = ({ videos }: any) => {
           </button>
         </form>
       </div>
-      <VideoGrid>
+      <div className='flex flex-wrap justify-evenly m-5'>
         {searchItems &&
           searchItems.map((search: VideoResponseProps) => (
             <VideoGridItem
@@ -66,7 +56,7 @@ const Search = ({ videos }: any) => {
               title={search.snippet.title}
             />
           ))}
-      </VideoGrid>
+      </div>
     </>
   );
 };

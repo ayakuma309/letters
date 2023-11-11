@@ -8,7 +8,11 @@ interface TagSelectProps {
   tagOpt: OptionType[];
 }
 
-const TagSelect: React.FC<TagSelectProps> = ({ onChange, value, tagOpt }) => {
+export default async function TagSelect({
+  onChange,
+  value,
+  tagOpt,
+}: TagSelectProps) {
   const [selectedTags, setSelectedTags] = useState<OptionType[]>(value);
 
   useEffect(() => {
@@ -27,6 +31,4 @@ const TagSelect: React.FC<TagSelectProps> = ({ onChange, value, tagOpt }) => {
       placeholder='タグを選択してください'
     />
   );
-};
-
-export default TagSelect;
+}

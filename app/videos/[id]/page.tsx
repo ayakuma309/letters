@@ -1,10 +1,8 @@
-import React, { Suspense } from 'react';
 import { Metadata } from 'next';
-import getVideoById from '@/actions/getVideoById';
-import getBook from '@/actions/getBook';
-import getVideoBook from '@/actions/getVideoBook';
-import VideoItem from './_components/VideoItem';
-import Loading from '@/app/loading';
+import VideoDetail from './_components/VideoDetail';
+import VideoBooks from './_components/books/VideoBooks';
+import { Suspense } from 'react';
+import Spinner from '@/app/_components/ui/spinner';
 
 export const metadata: Metadata = {
   title: 'YouTube',
@@ -18,22 +16,13 @@ type Props = {
 };
 
 export default async function Page({ params: { id } }: Props) {
-  const [video, books, videoBooks] = await Promise.all([
-    getVideoById(id),
-    getBook(),
-    getVideoBook(id),
-  ]);
-  if (!video || !books) {
-    return (
-      <div className='text-center'>
-        {video ? '書籍はありません' : '動画はありません'}
-      </div>
-    );
-  }
   return (
     <div className='sm:ml-20 mx-auto mt-10'>
-      <Suspense fallback={<Loading />}>
-        <VideoItem video={video} books={books} videoBooks={videoBooks} />
+      <Suspense fallback={<Spinner />}>
+        <VideoDetail videoId={id} />
+      </Suspense>
+      <Suspense fallback={<Spinner />}>
+        <VideoBooks videoId={id} />
       </Suspense>
     </div>
   );
