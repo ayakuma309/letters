@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import VideoGrid from './VideoGrid';
 import VideoGridItem from './VideoGridItem';
 import axios from 'axios';
 import { params } from '../../../../lib/youtube';
@@ -56,7 +55,7 @@ const Search = ({ videos }: any) => {
           </button>
         </form>
       </div>
-      <VideoGrid>
+      <div className='flex flex-wrap justify-evenly m-5'>
         {searchItems &&
           searchItems.map((search: VideoResponseProps) => (
             <VideoGridItem
@@ -66,7 +65,7 @@ const Search = ({ videos }: any) => {
               title={search.snippet.title}
             />
           ))}
-      </VideoGrid>
+      </div>
     </>
   );
 };
