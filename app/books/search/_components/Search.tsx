@@ -8,7 +8,8 @@ import BookList from './BookList';
 function fetcher(url: string) {
   return fetch(url).then((res) => res.json());
 }
-const Search = () => {
+
+export default function Search() {
   const [query, setQuery] = useState('');
   //検索ボタンをクリックした時の処理
   //サーバーサイドのAPIを呼び出し書籍情報を取得する
@@ -37,6 +38,4 @@ const Search = () => {
       <BookList data={searchItems} error={error} isLoading={isLoading} />
     </>
   );
-};
-
-export default Search;
+}

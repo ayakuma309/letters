@@ -7,12 +7,12 @@ interface OptionType {
   label: string;
 }
 
-interface BookTagSelectProps {
+interface Props {
   onChange: (selectedTags: OptionType[]) => void;
   value: OptionType[];
 }
 
-const BookTagSelect: React.FC<BookTagSelectProps> = ({ onChange, value }) => {
+export default function BookTagSelect({ onChange, value }: Props) {
   const [selectedTags, setSelectedTags] = useState<OptionType[]>(value);
 
   useEffect(() => {
@@ -31,6 +31,4 @@ const BookTagSelect: React.FC<BookTagSelectProps> = ({ onChange, value }) => {
       placeholder='タグを選択してください'
     />
   );
-};
-
-export default BookTagSelect;
+}

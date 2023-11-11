@@ -2,7 +2,7 @@ import { BookSearchResultType } from '@/types/types';
 import BookItem from './BookItem';
 import Loading from '@/app/loading';
 
-function BookList({
+export default function BookList({
   data,
   error,
   isLoading,
@@ -25,5 +25,3 @@ function BookList({
     </div>
   );
 }
-
-export default BookList;

@@ -11,7 +11,7 @@ type Props = {
   book: BookSearchResultType;
 };
 
-const BookItem: React.FC<Props> = ({ book }) => {
+export default function BookItem({ book }: Props) {
   const { data: session } = useSession();
   const router = useRouter();
   const [selectedTags, setSelectedTags] = useState<OptionType[]>([]);
@@ -69,6 +69,4 @@ const BookItem: React.FC<Props> = ({ book }) => {
       )}
     </div>
   );
-};
-
-export default BookItem;
+}
