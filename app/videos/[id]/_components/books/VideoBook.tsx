@@ -1,3 +1,4 @@
+'use client';
 import { BookVideoListType } from '@/types/types';
 import { useSession } from 'next-auth/react';
 
