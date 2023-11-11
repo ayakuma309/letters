@@ -6,10 +6,11 @@ import { useQiitaTagSearch } from '../../_components/hooks/useTagSearch';
 import TagList from '../../_components/common/search/TagList';
 import { qiitaTags } from '@/constants/qiitaTag';
 
-type QiitasProps = {
+type Props = {
   qiitas: QiitaArticleType[];
 };
-const Qiitas: React.FC<QiitasProps> = ({ qiitas }) => {
+
+export default function Qiitas({ qiitas }: Props) {
   const { searchResults, handleSearch } = useQiitaTagSearch(qiitas);
   return (
     <div className='py-4'>
@@ -22,6 +23,4 @@ const Qiitas: React.FC<QiitasProps> = ({ qiitas }) => {
       </div>
     </div>
   );
-};
-
-export default Qiitas;
+}

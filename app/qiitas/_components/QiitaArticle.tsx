@@ -7,13 +7,13 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { Role } from '@prisma/client';
 
-const QiitaArticle: React.FC<QiitaArticleType> = ({
+export default function QiitaArticle({
   id,
   url,
   title,
   tags,
   profileImageUrl,
-}) => {
+}: QiitaArticleType) {
   const { data: session } = useSession();
   const handleDeleteQiita = async (id: number) => {
     const router = useRouter();
@@ -74,6 +74,4 @@ const QiitaArticle: React.FC<QiitaArticleType> = ({
       </div>
     </div>
   );
-};
-
-export default QiitaArticle;
+}
