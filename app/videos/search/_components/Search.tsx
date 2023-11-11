@@ -3,21 +3,12 @@ import React, { useState } from 'react';
 import VideoGridItem from './VideoGridItem';
 import axios from 'axios';
 import { params } from '../../../../lib/youtube';
+import { VideoResponseProps } from '@/types/types';
 
-type VideoResponseProps = {
-  id: {
-    videoId: string;
-  };
-  snippet: {
-    title: string;
-    thumbnails: {
-      medium: {
-        url: string;
-      };
-    };
-  };
+type Props = {
+  videos: VideoResponseProps[] | null;
 };
-const Search = ({ videos }: any) => {
+const Search = ({ videos }: Props) => {
   const [term, setTerm] = useState('');
   const [searchItems, setSearchItems] = useState(videos);
 
