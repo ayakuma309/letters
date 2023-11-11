@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
-function SearchForm({ onSearch }: { onSearch: (query: string) => void }) {
+export default function SearchForm({
+  onSearch,
+}: {
+  onSearch: (query: string) => void;
+}) {
   const [query, setQuery] = useState('');
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -28,5 +32,3 @@ function SearchForm({ onSearch }: { onSearch: (query: string) => void }) {
     </form>
   );
 }
-
-export default SearchForm;

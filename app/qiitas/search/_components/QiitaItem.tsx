@@ -13,7 +13,7 @@ type Props = {
   item: QiitaItemsType;
 };
 
-const QiitaItem: React.FC<Props> = ({ item }) => {
+export default function QiitaItem({ item }: Props) {
   const [selectedTags, setSelectedTags] = useState<OptionType[]>([]);
   const { data: session } = useSession();
   const router = useRouter();
@@ -90,6 +90,4 @@ const QiitaItem: React.FC<Props> = ({ item }) => {
       </div>
     </div>
   );
-};
-
-export default QiitaItem;
+}
