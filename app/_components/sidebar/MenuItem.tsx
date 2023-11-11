@@ -6,12 +6,12 @@ import {
   TooltipTrigger,
 } from '@/app/_components/ui/tooltip';
 
-type MenuItemProps = {
+type Props = {
   title: string;
   src: React.ReactNode;
 };
 
-const MenuItem: React.FC<MenuItemProps> = ({ title, src }) => {
+export default function MenuItem({ title, src }: Props) {
   return (
     <TooltipProvider>
       <Tooltip>
@@ -24,6 +24,4 @@ const MenuItem: React.FC<MenuItemProps> = ({ title, src }) => {
       </Tooltip>
     </TooltipProvider>
   );
-};
-
-export default MenuItem;
+}
