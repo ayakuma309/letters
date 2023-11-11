@@ -4,11 +4,11 @@ import DatePicker, { registerLocale } from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 // 日本語の設定
 import ja from 'date-fns/locale/ja';
-import TagSelect from './TagSelect';
 import axios from 'axios';
 import { toast } from '@/app/_components/ui/use-toast';
 import { OptionType } from '@/types/types';
 import { videoTags } from '@/constants/videoTag';
+import TagSelect from '@/app/_components/common/search/TagSelect';
 interface Props {
   id: string;
   src: string;

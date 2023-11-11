@@ -5,8 +5,8 @@ import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { toast } from '@/app/_components/ui/use-toast';
-import TagSelect from '@/app/videos/search/_components/TagSelect';
 import { bookTags } from '@/constants/bookTag';
+import TagSelect from '@/app/_components/common/search/TagSelect';
 
 type Props = {
   book: BookSearchResultType;
