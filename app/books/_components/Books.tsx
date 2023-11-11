@@ -6,10 +6,11 @@ import { bookTags } from '@/constants/bookTag';
 import TagList from '@/app/_components/common/search/TagList';
 import { useBookTagSearch } from '@/app/_components/hooks/useTagSearch';
 
-type BooksProps = {
+type Props = {
   books: BookType[];
 };
-const Books: React.FC<BooksProps> = ({ books }) => {
+
+export default function Books({ books }: Props) {
   const { searchResults, handleSearch } = useBookTagSearch(books);
   return (
     <>
@@ -20,6 +21,4 @@ const Books: React.FC<BooksProps> = ({ books }) => {
       </div>
     </>
   );
-};
-
-export default Books;
+}
