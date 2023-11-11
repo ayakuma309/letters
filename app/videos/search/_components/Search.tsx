@@ -8,7 +8,8 @@ import { VideoResponseProps } from '@/types/types';
 type Props = {
   videos: VideoResponseProps[] | null;
 };
-const Search = ({ videos }: Props) => {
+
+export default function Search({ videos }: Props) {
   const [term, setTerm] = useState('');
   const [searchItems, setSearchItems] = useState(videos);
 
@@ -59,6 +60,4 @@ const Search = ({ videos }: Props) => {
       </div>
     </>
   );
-};
-
-export default Search;
+}
