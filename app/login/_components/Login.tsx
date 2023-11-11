@@ -9,8 +9,7 @@ import {
 } from '@/app/_components/ui/card';
 import LoginButton from './LoginButton';
 
-// ログイン
-const Login = () => {
+export default function Login() {
   return (
     <Card className='max-w-[500px] mx-auto'>
       <CardHeader>
@@ -24,6 +23,4 @@ const Login = () => {
       </CardContent>
     </Card>
   );
-};
-
-export default Login;
+}

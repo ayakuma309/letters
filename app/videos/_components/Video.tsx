@@ -13,7 +13,7 @@ type Props = {
   video: VideoType;
 };
 
-const Video: React.FC<Props> = ({ video }) => {
+export default function Video({ video }: Props) {
   const { data: session } = useSession();
   const router = useRouter();
   const handleDeletePost = async () => {
@@ -65,6 +65,4 @@ const Video: React.FC<Props> = ({ video }) => {
       </div>
     </div>
   );
-};
-
-export default Video;
+}

@@ -6,11 +6,11 @@ import { videoTags } from '@/constants/videoTag';
 import { useVideoTagSearch } from '@/app/_components/hooks/useTagSearch';
 import TagList from '@/app/_components/common/search/TagList';
 
-type VideoItemsProps = {
+type Props = {
   videos: VideoType[];
 };
 
-const VideoItems: React.FC<VideoItemsProps> = ({ videos }) => {
+export default function VideoItems({ videos }: Props) {
   const { searchResults, handleSearch } = useVideoTagSearch(videos);
 
   return (
@@ -24,6 +24,4 @@ const VideoItems: React.FC<VideoItemsProps> = ({ videos }) => {
       </div>
     </>
   );
-};
-
-export default VideoItems;
+}

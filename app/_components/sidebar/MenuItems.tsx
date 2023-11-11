@@ -2,7 +2,7 @@ import React from 'react';
 import MenuItem from './MenuItem';
 import Link from 'next/link';
 
-type MenuItemsProps = {
+type Props = {
   menuItems: {
     title: string;
     path: string;
@@ -10,7 +10,7 @@ type MenuItemsProps = {
   }[];
 };
 
-const MenuItems: React.FC<MenuItemsProps> = ({ menuItems }) => {
+export default function MenuItems({ menuItems }: Props) {
   return (
     <>
       {menuItems.map((menu, index) => (
@@ -22,6 +22,4 @@ const MenuItems: React.FC<MenuItemsProps> = ({ menuItems }) => {
       ))}
     </>
   );
-};
-
-export default MenuItems;
+}

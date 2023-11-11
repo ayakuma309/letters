@@ -11,12 +11,12 @@ import VideoBookForm from './books/VideoBookForm';
 import { Role } from '@prisma/client';
 import Bookmarks from './timestamp/Bookmarks';
 
-type VideoItemType = {
+type Props = {
   video: VideoType;
   books: BookVideoType[];
 };
 
-const VideoItem: React.FC<VideoItemType> = ({ video, books }) => {
+export default function VideoItem({ video, books }: Props) {
   const { data: session } = useSession();
   const newBookmarkModal = useNewBookmarkModal();
   const [YTPlayer, setYTPlayer] = useState<YT.Player>();
@@ -73,6 +73,4 @@ const VideoItem: React.FC<VideoItemType> = ({ video, books }) => {
       )}
     </div>
   );
-};
-
-export default VideoItem;
+}

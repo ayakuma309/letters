@@ -10,10 +10,11 @@ import { useRouter } from 'next/navigation';
 import { toast } from '@/app/_components/ui/use-toast';
 import { Role } from '@prisma/client';
 
-type BookProps = {
+type Props = {
   book: BookType;
 };
-const Book: React.FC<BookProps> = ({ book }) => {
+
+export default function Book({ book }: Props) {
   const { data: session } = useSession();
   const router = useRouter();
 
@@ -52,6 +53,4 @@ const Book: React.FC<BookProps> = ({ book }) => {
       </div>
     </div>
   );
-};
-
-export default Book;
+}

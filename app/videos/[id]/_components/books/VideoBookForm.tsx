@@ -5,12 +5,12 @@ import axios from 'axios';
 import { toast } from '@/app/_components/ui/use-toast';
 import { Button } from '@/app/_components/ui/button';
 
-type VideoBookFormProps = {
+type Props = {
   videoId: number;
   books: BookVideoType[];
 };
 
-const VideoBookForm: React.FC<VideoBookFormProps> = ({ videoId, books }) => {
+export default function VideoBookForm({ videoId, books }: Props) {
   const [selectedBook, setSelectedBook] = useState<OptionType>();
 
   const BookList: OptionType[] = books.map((book) => ({
@@ -56,6 +56,4 @@ const VideoBookForm: React.FC<VideoBookFormProps> = ({ videoId, books }) => {
       <Button>登録</Button>
     </form>
   );
-};
-
-export default VideoBookForm;
+}

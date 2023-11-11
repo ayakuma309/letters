@@ -2,7 +2,7 @@ import React from 'react';
 import { QiitaItemsType } from '@/types/qiitaTypes';
 import QiitaItem from './QiitaItem';
 
-function QiitaList({
+export default function QiitaList({
   data,
   error,
   isLoading,
@@ -25,5 +25,3 @@ function QiitaList({
     </div>
   );
 }
-
-export default QiitaList;

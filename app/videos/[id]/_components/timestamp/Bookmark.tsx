@@ -4,17 +4,13 @@ import { useSession } from 'next-auth/react';
 import useTimeFormatter from '../../../../_components/hooks/useTimeFormatter';
 import { Bookmark } from '@prisma/client';
 
-interface BookmarkProps {
+interface Props {
   bookmark: Bookmark;
   ytPlayer: YT.Player | undefined;
   handleDelete: (bookmarkId: string) => void;
 }
 
-const Bookmark: React.FC<BookmarkProps> = ({
-  bookmark,
-  ytPlayer,
-  handleDelete,
-}) => {
+export default function Bookmark({ bookmark, ytPlayer, handleDelete }: Props) {
   const { data: session } = useSession();
   const timeToLink = () => {
     if (ytPlayer) {
@@ -44,6 +40,4 @@ const Bookmark: React.FC<BookmarkProps> = ({
       </div>
     </>
   );
-};
-
-export default Bookmark;
+}

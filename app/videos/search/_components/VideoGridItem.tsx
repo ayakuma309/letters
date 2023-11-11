@@ -9,17 +9,13 @@ import axios from 'axios';
 import { toast } from '@/app/_components/ui/use-toast';
 import { OptionType } from '@/types/types';
 import { videoTags } from '@/constants/videoTag';
-interface VideoGridItemProps {
+interface Props {
   id: string;
   src: string;
   title: string;
 }
 
-export default async function VideoGridItem({
-  id,
-  src,
-  title,
-}: VideoGridItemProps) {
+export default async function VideoGridItem({ id, src, title }: Props) {
   const [selectedTags, setSelectedTags] = useState<OptionType[]>([]);
   // 今日の日付を定義
   const initialDate = new Date();

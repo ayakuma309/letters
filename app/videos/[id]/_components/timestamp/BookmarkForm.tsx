@@ -2,16 +2,17 @@ import React from 'react';
 import NewBookmarkModal from './NewBookmarkModal';
 import { VideoType } from '@/types/types';
 
-type VideoItemType = {
+type Props = {
   video: VideoType;
   time: number | undefined;
   handleMakeTimestamp: () => void;
 };
-const BookmarkForm: React.FC<VideoItemType> = ({
+
+export default function BookmarkForm({
   video,
   time,
   handleMakeTimestamp,
-}) => {
+}: Props) {
   return (
     <>
       <div className='text-center my-3'>
@@ -25,6 +26,4 @@ const BookmarkForm: React.FC<VideoItemType> = ({
       <NewBookmarkModal youTubeId={video.id} time={time} />
     </>
   );
-};
-
-export default BookmarkForm;
+}

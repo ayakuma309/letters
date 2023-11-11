@@ -11,11 +11,11 @@ import MenuItems from './MenuItems';
 import MenuItem from './MenuItem';
 import { toast } from '../ui/use-toast';
 
-type MenuProps = {
+type Props = {
   currentUser: User | null;
 };
 
-const Menu: React.FC<MenuProps> = ({ currentUser }) => {
+export default function Menu({ currentUser }: Props) {
   //logout
   const handleLogout = () => {
     const confirmed = window.confirm('ログアウトしますか？');
@@ -49,6 +49,4 @@ const Menu: React.FC<MenuProps> = ({ currentUser }) => {
       </Link> */}
     </ul>
   );
-};
-
-export default Menu;
+}
