@@ -14,6 +14,20 @@ export type OptionType = {
   label: string;
 };
 
+export type VideoResponseProps = {
+  id: {
+    videoId: string;
+  };
+  snippet: {
+    title: string;
+    thumbnails: {
+      medium: {
+        url: string;
+      };
+    };
+  };
+};
+
 export type VideoType = {
   id: number;
   videoId: string;
