@@ -13,8 +13,10 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   // 認証情報取得
-  const session = await getCurrentUser();
-  const videos = await getFetchYouTubeVideo('エンジニア転職チャンネル');
+  const [session, videos] = await Promise.all([
+    getCurrentUser(),
+    getFetchYouTubeVideo('エンジニア転職チャンネル'),
+  ]);
   // ログインしていない場合はログイン画面にリダイレクト
   if (!session || session.role !== Role.ADMIN) {
     redirect('/login');
