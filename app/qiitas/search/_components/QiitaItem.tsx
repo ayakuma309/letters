@@ -1,5 +1,4 @@
 import { toast } from '@/app/_components/ui/use-toast';
-import TagSelect from '@/app/videos/search/_components/TagSelect';
 import { QiitaItemsType } from '@/types/qiitaTypes';
 import { OptionType } from '@/types/types';
 import axios from 'axios';
@@ -8,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { BsBookmark } from 'react-icons/bs';
 import { qiitaTags } from '@/constants/qiitaTag';
+import TagSelect from '@/app/_components/common/search/TagSelect';
 
 type Props = {
   item: QiitaItemsType;

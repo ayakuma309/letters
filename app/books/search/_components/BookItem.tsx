@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { BsBookmark } from 'react-icons/bs';
-import BookTagSelect from './BookTagSelect';
 import { BookSearchResultType, OptionType } from '@/types/types';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { toast } from '@/app/_components/ui/use-toast';
+import { bookTags } from '@/constants/bookTag';
+import TagSelect from '@/app/_components/common/search/TagSelect';
 
 type Props = {
   book: BookSearchResultType;
@@ -55,9 +56,10 @@ export default function BookItem({ book }: Props) {
       </div>
       {session?.user && (
         <form onSubmit={handleSubmit}>
-          <BookTagSelect
+          <TagSelect
             value={selectedTags}
             onChange={(tags) => setSelectedTags(tags)}
+            tagOpt={bookTags}
           />
           <button
             type='submit'
