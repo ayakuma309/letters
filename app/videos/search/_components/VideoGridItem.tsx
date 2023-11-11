@@ -15,7 +15,11 @@ interface VideoGridItemProps {
   title: string;
 }
 
-const VideoGridItem: React.FC<VideoGridItemProps> = ({ id, src, title }) => {
+export default async function VideoGridItem({
+  id,
+  src,
+  title,
+}: VideoGridItemProps) {
   const [selectedTags, setSelectedTags] = useState<OptionType[]>([]);
   // 今日の日付を定義
   const initialDate = new Date();
@@ -86,6 +90,4 @@ const VideoGridItem: React.FC<VideoGridItemProps> = ({ id, src, title }) => {
       </form>
     </div>
   );
-};
-
-export default VideoGridItem;
+}
