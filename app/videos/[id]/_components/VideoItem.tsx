@@ -1,5 +1,5 @@
 'use client';
-import { BookVideoListType, BookVideoType, VideoType } from '@/types/types';
+import { BookVideoType, VideoType } from '@/types/types';
 import React, { useState } from 'react';
 import YouTube from 'react-youtube';
 import { TwitterShareButton } from 'react-share';
@@ -8,16 +8,15 @@ import useNewBookmarkModal from '@/app/_components/hooks/useNewBookmarkModal';
 import VideoTags from '../../_components/VideoTags';
 import BookmarkForm from './timestamp/BookmarkForm';
 import VideoBookForm from './books/VideoBookForm';
-import Bookmarks from './timestamp/Bookmarks';
-import VideoBook from './books/VideoBook';
 import { Role } from '@prisma/client';
+import Bookmarks from './timestamp/Bookmarks';
 
 type VideoItemType = {
   video: VideoType;
   books: BookVideoType[];
-  videoBooks: BookVideoListType[];
 };
-const VideoItem: React.FC<VideoItemType> = ({ video, books, videoBooks }) => {
+
+const VideoItem: React.FC<VideoItemType> = ({ video, books }) => {
   const { data: session } = useSession();
   const newBookmarkModal = useNewBookmarkModal();
   const [YTPlayer, setYTPlayer] = useState<YT.Player>();
@@ -39,30 +38,24 @@ const VideoItem: React.FC<VideoItemType> = ({ video, books, videoBooks }) => {
     width: '100%',
   };
   return (
-    <div className='container px-4 py-8'>
-      <div className='bg-white shadow-md rounded p-4 mb-4'>
-        <div className='mb-4'>
-          <div className='video-container'>
-            <YouTube
-              videoId={video.videoId}
-              opts={opts}
-              onReady={makeYTPlayer}
-            />
-          </div>
-          <p className='text-xl font-bold my-2'>{video.title}</p>
-          <div className='flex justify-between'>
-            {video.tags && video.tags.length > 0 && (
-              <VideoTags tags={video.tags} />
-            )}
-            <TwitterShareButton
-              hashtags={['おすすめ動画']}
-              url={`https://www.youtube.com/watch?v=${video.videoId}`}
-            >
-              <div className='text-white font-bold rounded mr-5 bg-black px-2 py-1'>
-                \uD835\uDD4F
-              </div>
-            </TwitterShareButton>
-          </div>
+    <div className='bg-white shadow-md rounded p-4 mb-4'>
+      <div className='mb-4'>
+        <div className='video-container'>
+          <YouTube videoId={video.videoId} opts={opts} onReady={makeYTPlayer} />
+        </div>
+        <p className='text-xl font-bold my-2'>{video.title}</p>
+        <div className='flex justify-between'>
+          {video.tags && video.tags.length > 0 && (
+            <VideoTags tags={video.tags} />
+          )}
+          <TwitterShareButton
+            hashtags={['おすすめ動画']}
+            url={`https://www.youtube.com/watch?v=${video.videoId}`}
+          >
+            <div className='text-white font-bold rounded mr-5 bg-black px-2 py-1'>
+              \uD835\uDD4F
+            </div>
+          </TwitterShareButton>
         </div>
       </div>
       {session?.user.role === Role.ADMIN && (
@@ -78,13 +71,6 @@ const VideoItem: React.FC<VideoItemType> = ({ video, books, videoBooks }) => {
       {video.bookmarks && video.bookmarks.length != 0 && (
         <Bookmarks bookmarks={video.bookmarks} ytPlayer={YTPlayer} />
       )}
-      <div className='flex flex-wrap items-center'>
-        {videoBooks &&
-          videoBooks.length != 0 &&
-          videoBooks.map((book) => (
-            <VideoBook key={book.id} videoBook={book} />
-          ))}
-      </div>
     </div>
   );
 };
