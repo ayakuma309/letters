@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { RandomVideoType } from '@/types/types';
 import RandomVideo from './RandomVideo';
 
-type RandomVideosType = {
+type Props = {
   videos: RandomVideoType[];
 };
 
-const RandomVideos: React.FC<RandomVideosType> = ({ videos }) => {
+export default function RandomVideos({ videos }: Props) {
   return (
     <>
       <div className='flex flex-wrap  my-10 justify-center'>
@@ -27,6 +27,4 @@ const RandomVideos: React.FC<RandomVideosType> = ({ videos }) => {
       </div>
     </>
   );
-};
-
-export default RandomVideos;
+}

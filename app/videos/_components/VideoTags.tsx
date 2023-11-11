@@ -1,11 +1,11 @@
 import { TagType } from '@/types/types';
 import React from 'react';
 
-type VideoTagsProps = {
+type Props = {
   tags: TagType[];
 };
 
-const VideoTags: React.FC<VideoTagsProps> = ({ tags }) => {
+export default function VideoTags({ tags }: Props) {
   return (
     <div className='flex flex-wrap'>
       {tags.map((tag, index) => (
@@ -18,6 +18,4 @@ const VideoTags: React.FC<VideoTagsProps> = ({ tags }) => {
       ))}
     </div>
   );
-};
-
-export default VideoTags;
+}

@@ -2,11 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import { RandomVideoType } from '@/types/types';
 
-type RandomVideoProps = {
+type Props = {
   video: RandomVideoType;
 };
 
-const RandomVideo: React.FC<RandomVideoProps> = ({ video }) => {
+export default function Hoge({ video }: Props) {
   return (
     <div style={{ width: '300px' }}>
       <div className='bg-white shadow-md rounded p-4 m-1 '>
@@ -22,6 +22,4 @@ const RandomVideo: React.FC<RandomVideoProps> = ({ video }) => {
       </div>
     </div>
   );
-};
-
-export default RandomVideo;
+}
