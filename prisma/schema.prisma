@@ -67,7 +67,6 @@ model YouTube {
   videoId     String    @unique
   title       String
   url         String
-  tweet       Int?
   releaseAt   DateTime
   tags        YouTubeTag[]
   bookmarks   Bookmark[]
