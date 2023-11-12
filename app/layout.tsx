@@ -10,6 +10,7 @@ import Sidebar from '@/app/_components/sidebar/Sidebar';
 import { Toaster } from '@/app/_components/ui/toaster';
 import MenuItem from './_components/sidebar/MenuItem';
 import GoogleAnalytics from './_components/common/GoogleAnalytics/GoogleAnalytics';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -67,6 +68,18 @@ export default async function RootLayout({
                     </a>
                   </div>
                   Copyright © All rights reserved | Letters Tube
+                  <div className='flex justify-center'>
+                    <Link href={'/terms'} className='text-gray-400'>
+                      利用規約
+                    </Link>
+
+                    <Link
+                      href={'/privacy-policy'}
+                      className='text-gray-400 ml-3'
+                    >
+                      プライバシーポリシー
+                    </Link>
+                  </div>
                 </div>
               </footer>
             </div>
