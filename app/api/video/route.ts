@@ -7,7 +7,7 @@ export async function POST(request: Request) {
   try {
     // リクエストボディの取得
     const body = await request.json();
-    const { videoId, title, url, tweet, releaseAt, tags } = body;
+    const { videoId, title, url, releaseAt, tags } = body;
 
     // ログインユーザーの取得
     const currentUser = await getCurrentUser();
@@ -22,7 +22,6 @@ export async function POST(request: Request) {
       videoId,
       title,
       url,
-      tweet,
       releaseAt,
       tags,
     });

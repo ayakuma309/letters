@@ -8,8 +8,8 @@ import getCurrentUser from '@/actions/getCurrentUser';
 import Sidebar from '@/app/_components/sidebar/Sidebar';
 
 import { Toaster } from '@/app/_components/ui/toaster';
-import MenuItem from './_components/sidebar/MenuItem';
 import GoogleAnalytics from './_components/common/GoogleAnalytics/GoogleAnalytics';
+import Footer from './_components/common/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -46,29 +46,10 @@ export default async function RootLayout({
             <Sidebar currentUser={currentUser} />
             <div className='flex-1'>
               <Toaster />
-              <main className='container mx-auto max-w-screen-md px-2'>
+              <main className='container mx-auto max-w-screen-md px-2 min-h-screen'>
                 {children}
               </main>
-              {/* フッター */}
-              <footer className='py-5'>
-                <div className='text-center text-sm'>
-                  <div className='flex justify-center space-x-5'>
-                    <a
-                      href='https://twitter.com/ZCunkuma'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
-                      <MenuItem
-                        title={'お問い合わせはこちらからお願いします'}
-                        src={
-                          <img src='https://img.icons8.com/fluent/30/000000/twitter.png' />
-                        }
-                      />
-                    </a>
-                  </div>
-                  Copyright © All rights reserved | Letters Tube
-                </div>
-              </footer>
+              <Footer />
             </div>
           </div>
         </AuthContext>
