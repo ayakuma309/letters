@@ -46,7 +46,7 @@ export default async function RootLayout({
             <Sidebar currentUser={currentUser} />
             <div className='flex-1'>
               <Toaster />
-              <main className='container mx-auto max-w-screen-md px-2'>
+              <main className='container mx-auto max-w-screen-md px-2 min-h-screen'>
                 {children}
               </main>
               <Footer />
