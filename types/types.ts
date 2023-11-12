@@ -33,7 +33,6 @@ export type VideoType = {
   videoId: string;
   url: string;
   title: string;
-  tweet: number | null;
   releaseAt: Date;
   tags: TagType[];
   bookmarks?: Bookmark[] | null;

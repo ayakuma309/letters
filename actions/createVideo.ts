@@ -5,7 +5,6 @@ const createVideo = async ({
   videoId,
   title,
   url,
-  tweet,
   releaseAt,
   tags,
 }: {
@@ -36,7 +35,6 @@ const createVideo = async ({
         videoId,
         title,
         url,
-        tweet,
         releaseAt,
         tags: {
           connect: createdTags.map((tag) => ({ id: tag.id })),
