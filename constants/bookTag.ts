@@ -23,7 +23,6 @@ export const bookTags = [
   { value: 'チーム開発手法', label: 'チーム開発手法' },
   { value: 'DevOps', label: 'DevOps' },
   { value: 'オブジェクト指向', label: 'オブジェクト指向' },
-  { value: '要件定義', label: '要件定義' },
   { value: 'マーケティング', label: 'マーケティング' },
   { value: 'アルゴリズム', label: 'アルゴリズム' },
   { value: 'デザイン', label: 'デザイン' },

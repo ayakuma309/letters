@@ -20,7 +20,7 @@ export default async function VideoGridItem({ id, src, title }: Props) {
   const [selectedTags, setSelectedTags] = useState<OptionType[]>([]);
   // 今日の日付を定義
   const initialDate = new Date();
-  const [date, setDate] = React.useState(initialDate);
+  const [date, setDate] = useState(initialDate);
   registerLocale('ja', ja);
   const router = useRouter();
 

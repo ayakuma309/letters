@@ -8,6 +8,7 @@ export const qiitaTags = [
   { value: 'Vue.js', label: 'Vue.js' },
   { value: 'Vuetify', label: 'Vuetify' },
   { value: 'Nuxt.js', label: 'Nuxt.js' },
+  { value: 'Stumulus', label: 'Stumulus' },
   { value: 'Laravel', label: 'Laravel' },
   { value: 'Python', label: 'Python' },
   { value: 'Flutter', label: 'Flutter' },
@@ -51,4 +52,5 @@ export const qiitaTags = [
   { value: 'AWS', label: 'AWS' },
   { value: 'Docker', label: 'Docker' },
   { value: 'クソアプリ', label: 'クソアプリ' },
+  { value: '転職', label: '転職' },
 ];
