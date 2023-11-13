@@ -15,7 +15,7 @@ export default async function Page() {
   const session = await getCurrentUser();
   // ログインしていない場合はログイン画面にリダイレクト
   if (!session || session.role !== Role.ADMIN) {
-    redirect('/login');
+    redirect('/');
   }
   return (
     <div className='sm:ml-20 mx-auto mt-10'>
