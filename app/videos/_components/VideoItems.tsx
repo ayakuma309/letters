@@ -5,6 +5,7 @@ import Video from './Video';
 import { videoTags } from '@/constants/videoTag';
 import { useVideoTagSearch } from '@/app/_components/hooks/useTagSearch';
 import TagList from '@/app/_components/common/search/TagList';
+import SearchBar from '@/app/_components/common/search/SearchBar';
 
 type Props = {
   videos: VideoType[];
@@ -15,6 +16,7 @@ export default function VideoItems({ videos }: Props) {
 
   return (
     <>
+      <SearchBar />
       <TagList handleSearch={handleSearch} tagOptions={videoTags} />
       <div className='flex flex-wrap justify-between'>
         {searchResults &&
