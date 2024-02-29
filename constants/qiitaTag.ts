@@ -52,5 +52,5 @@ export const qiitaTags = [
   { value: 'AWS', label: 'AWS' },
   { value: 'Docker', label: 'Docker' },
   { value: 'クソアプリ', label: 'クソアプリ' },
-  { value: '転職', label: '転職' },
+  { value: '転職,ポエム', label: '転職,ポエム' },
 ];
