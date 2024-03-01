@@ -8,11 +8,12 @@ const notion = new Client({
 //取得した結果をマッピングし、各ページの情報（作成日時、タイトル、ID、説明など）を抽出して返す。
 export const getPageList = async () => {
   const { results } = await notion.databases.query({
+    page_size: 100,
     database_id: constants.notionDatabaseId,
     sorts: [
       {
         property: 'date',
-        direction: 'ascending',
+        direction: 'descending',
       },
     ],
   });
@@ -44,11 +45,22 @@ export const getPageList = async () => {
         return result.properties.date;
       })();
 
+      const url = (() => {
+        if (
+          result.properties.url === undefined ||
+          result.properties.url.type !== 'url'
+        ) {
+          return '';
+        }
+        return result.properties.url.url;
+      })();
+
       return {
         date,
         title,
         id: result.id,
         tags,
+        url,
       };
     })
     .filter((result): result is NonNullable<typeof result> => result !== null);

@@ -16,6 +16,7 @@ export default async function Page() {
 
   return (
     <div className='sm:ml-20 mx-auto mt-10 py-4'>
+      <div className='border w-24 p-3 mx-auto text-center rounded-md'>全て</div>
       <VideoItems videos={videos} />
     </div>
   );
