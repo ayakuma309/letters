@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import getVideo from '@/actions/getVideo';
 import VideoItems from './_components/VideoItems';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'YouTube',
@@ -16,7 +17,11 @@ export default async function Page() {
 
   return (
     <div className='sm:ml-20 mx-auto mt-10 py-4'>
-      <div className='border w-24 p-3 mx-auto text-center rounded-md'>全て</div>
+      <Link href={`/videos/all`}>
+        <div className='border w-42 p-3 mx-auto text-center rounded-md hover:bg-red-500 hover:text-white'>
+          最新動画はこちら
+        </div>
+      </Link>
       <VideoItems videos={videos} />
     </div>
   );
