@@ -24,7 +24,7 @@ export default function SearchBar({ bgColor = 'bg-red-600' }: Props) {
           <input
             className='bg-gray-100 outline-none'
             type='text'
-            placeholder='Youtube title or keyword...'
+            placeholder='title or keyword...'
           />
         </div>
         <div
