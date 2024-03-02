@@ -15,7 +15,12 @@ export default async function Page() {
           {pagePosts.map((post, i) => (
             <NotePost key={i} post={post} />
           ))}
-          <Link href={link as string} rel='noopener noreferrer' target='_blank'>
+          <Link
+            href={link as string}
+            rel='noopener noreferrer'
+            target='_blank'
+            className='font-semibold'
+          >
             さらに見る
           </Link>
         </div>
