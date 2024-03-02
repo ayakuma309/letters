@@ -37,16 +37,10 @@ export default function Menu({ currentUser }: Props) {
             onClick={handleLogout}
             className='flex items-center gap-x-4 p-3 text-base font-normal rounded-lg cursor-pointer dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'
           >
-            <MenuItem title={'LogOut'} src={<IoMdLogOut />} />
+            <MenuItem title={'LogOut'} icon={<IoMdLogOut />} />
           </div>
         </>
       )}
-      {/* ログインしてからの機能がないので後で拡張したときに追加する */}
-      {/* <Link href={'/login'}>
-        <div className='flex items-center gap-x-4 p-3 text-base font-normal rounded-lg cursor-pointer dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'>
-          <MenuItem title={'LogIn'} src={<IoMdLogIn />} />
-        </div>
-      </Link> */}
     </ul>
   );
 }

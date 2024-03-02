@@ -8,15 +8,15 @@ import {
 
 type Props = {
   title: string;
-  src: React.ReactNode;
+  icon: React.ReactNode;
 };
 
-export default function MenuItem({ title, src }: Props) {
+export default function MenuItem({ title, icon }: Props) {
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger>
-          <p className='text-3xl'>{src}</p>
+          <p className='text-3xl'>{icon}</p>
         </TooltipTrigger>
         <TooltipContent>
           <p>{title}</p>

@@ -6,7 +6,7 @@ type Props = {
   menuItems: {
     title: string;
     path: string;
-    src: React.ReactNode;
+    icon: React.ReactNode;
   }[];
 };
 
@@ -16,7 +16,7 @@ export default function MenuItems({ menuItems }: Props) {
       {menuItems.map((menu, index) => (
         <Link href={menu.path} key={index}>
           <li className='flex-1 p-3 text-base font-normal rounded-lg cursor-pointer dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'>
-            <MenuItem title={menu.title} src={menu.src} />
+            <MenuItem title={menu.title} icon={menu.icon} />
           </li>
         </Link>
       ))}
