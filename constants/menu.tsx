@@ -7,6 +7,7 @@ import { FaSearch } from 'react-icons/fa';
 import { BiSolidBookAlt } from 'react-icons/bi';
 import { GiArchiveResearch } from 'react-icons/gi';
 import { FaSearchPlus } from 'react-icons/fa';
+import { FaRegStickyNote } from 'react-icons/fa';
 
 export const Menus = [
   { title: 'youtube', path: '/videos', icon: <ImYoutube2 /> },
@@ -17,6 +18,7 @@ export const Menus = [
   },
   { title: 'Qiita', path: '/qiitas', icon: <SiQiita /> },
   { title: 'Book', path: '/books', icon: <BiSolidBookAlt /> },
+  { title: 'Note', path: '/note', icon: <FaRegStickyNote /> },
 ];
 
 export const LoginAfterMenus = [
