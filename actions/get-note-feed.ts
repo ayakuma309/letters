@@ -20,14 +20,20 @@ const getRssFeed = async (
         item: ['note:creatorImage', 'note:creatorName', 'media:thumbnail'],
       },
     }).parseURL(url);
-    const pagePosts: RssFeedPostType[] = feed.items.map((item) => ({
-      slug: item.link ?? url,
-      title: item.title ?? '',
-      date: item.pubDate ? formatTimeElapsed(item.pubDate) : '',
-      'note:creatorImage': item['note:creatorImage'] ?? '',
-      'note:creatorName': item['note:creatorName'] ?? '',
-      'media:thumbnail': item['media:thumbnail'] ?? '',
-    }));
+    const pagePosts: RssFeedPostType[] = feed.items
+      .sort((a, b) => {
+        const dateA = a.pubDate ? new Date(a.pubDate) : new Date();
+        const dateB = b.pubDate ? new Date(b.pubDate) : new Date();
+        return dateB.getTime() - dateA.getTime();
+      })
+      .map((item) => ({
+        slug: item.link ?? url,
+        title: item.title ?? '',
+        date: item.pubDate ? formatTimeElapsed(item.pubDate) : '',
+        'note:creatorImage': item['note:creatorImage'] ?? '',
+        'note:creatorName': item['note:creatorName'] ?? '',
+        'media:thumbnail': item['media:thumbnail'] ?? '',
+      }));
     return {
       pagePosts,
       title,
