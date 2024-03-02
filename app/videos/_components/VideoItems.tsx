@@ -3,7 +3,7 @@ import React from 'react';
 import { VideoType } from '@/types/types';
 import Video from './Video';
 import { videoTags } from '@/constants/videoTag';
-import { useVideoTagSearch } from '@/app/_components/hooks/useTagSearch';
+import { useVideoTagSearch } from '@/app/_components/hooks/useSearch';
 import TagList from '@/app/_components/common/search/TagList';
 import SearchBar from '@/app/_components/common/search/SearchBar';
 
@@ -16,7 +16,7 @@ export default function VideoItems({ videos }: Props) {
 
   return (
     <>
-      <SearchBar />
+      <SearchBar handleSearch={handleSearch} />
       <TagList handleSearch={handleSearch} tagOptions={videoTags} />
       <div className='flex flex-wrap justify-between'>
         {searchResults &&
