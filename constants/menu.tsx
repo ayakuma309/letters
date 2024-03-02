@@ -7,20 +7,22 @@ import { FaSearch } from 'react-icons/fa';
 import { BiSolidBookAlt } from 'react-icons/bi';
 import { GiArchiveResearch } from 'react-icons/gi';
 import { FaSearchPlus } from 'react-icons/fa';
+import { FaRegStickyNote } from 'react-icons/fa';
 
 export const Menus = [
-  { title: 'youtube', path: '/videos', src: <ImYoutube2 /> },
+  { title: 'youtube', path: '/videos', icon: <ImYoutube2 /> },
   {
     title: 'random',
     path: '/random',
-    src: <GiPerspectiveDiceSixFacesRandom />,
+    icon: <GiPerspectiveDiceSixFacesRandom />,
   },
-  { title: 'Qiita', path: '/qiitas', src: <SiQiita /> },
-  { title: 'Book', path: '/books', src: <BiSolidBookAlt /> },
+  { title: 'Qiita', path: '/qiitas', icon: <SiQiita /> },
+  { title: 'Book', path: '/books', icon: <BiSolidBookAlt /> },
+  { title: 'Note', path: '/note', icon: <FaRegStickyNote /> },
 ];
 
 export const LoginAfterMenus = [
-  { title: 'Youtube検索', path: '/videos/search', src: <FaSearchPlus /> },
-  { title: 'Qiita検索', path: '/qiitas/search', src: <FaSearch /> },
-  { title: 'Book検索', path: '/books/search', src: <GiArchiveResearch /> },
+  { title: 'Youtube検索', path: '/videos/search', icon: <FaSearchPlus /> },
+  { title: 'Qiita検索', path: '/qiitas/search', icon: <FaSearch /> },
+  { title: 'Book検索', path: '/books/search', icon: <GiArchiveResearch /> },
 ];

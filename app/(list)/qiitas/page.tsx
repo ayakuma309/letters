@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import getQiita from '@/actions/getQiita';
-import Qiitas from '@/app/qiitas/_components/Qiitas';
+import Qiitas from '@/app/(list)/qiitas/_components/Qiitas';
 
 export const metadata: Metadata = {
   title: 'Qiita記事',
@@ -9,9 +9,5 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const qiitas = await getQiita();
-  return (
-    <div className='sm:ml-20 mx-auto mt-10 py-4'>
-      <Qiitas qiitas={qiitas} />
-    </div>
-  );
+  return <Qiitas qiitas={qiitas} />;
 }

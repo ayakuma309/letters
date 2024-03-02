@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { IoMdClose } from 'react-icons/io';
-import { Button } from '../../../../_components/ui/button';
+import { Button } from '../../../../../_components/ui/button';
 
 type Props = {
   isOpen?: boolean;

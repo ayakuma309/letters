@@ -14,7 +14,7 @@ export default function Footer() {
           >
             <MenuItem
               title={'お問い合わせはこちらからお願いします'}
-              src={
+              icon={
                 <img src='https://img.icons8.com/fluent/30/000000/twitter.png' />
               }
             />

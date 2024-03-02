@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import Search from '@/app/qiitas/search/_components/Search';
+import Search from '@/app/(list)/qiitas/search/_components/Search';
 import getCurrentUser from '@/actions/getCurrentUser';
 import { redirect } from 'next/navigation';
 import { Role } from '@prisma/client';

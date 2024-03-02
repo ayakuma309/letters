@@ -14,9 +14,5 @@ export default async function Page() {
     return <div className='text-center'>投稿はありません</div>;
   }
 
-  return (
-    <div className='sm:ml-20 mx-auto mt-10 py-4'>
-      <Books books={books} />
-    </div>
-  );
+  return <Books books={books} />;
 }

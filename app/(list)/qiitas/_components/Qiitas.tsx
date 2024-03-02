@@ -2,8 +2,8 @@
 import React from 'react';
 import QiitaArticle from './QiitaArticle';
 import { QiitaArticleType } from '@/types/qiitaTypes';
-import { useQiitaTagSearch } from '../../_components/hooks/useSearch';
-import TagList from '../../_components/common/search/TagList';
+import { useQiitaTagSearch } from '../../../_components/hooks/useSearch';
+import TagList from '../../../_components/common/search/TagList';
 import { qiitaTags } from '@/constants/qiitaTag';
 import SearchBar from '@/app/_components/common/search/SearchBar';
 
