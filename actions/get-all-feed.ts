@@ -22,8 +22,7 @@ const getRssFeed = async (
       date: item.pubDate ? formatTimeElapsed(item.pubDate) : '',
       'note:creatorImage': item['note:creatorImage'] ?? '',
       'note:creatorName': item['note:creatorName'] ?? '',
-      'media:thumbnail':
-        item['media:thumbnail'] ?? '../app/opengraph-image.png',
+      'media:thumbnail': item['media:thumbnail'] ?? '',
     }));
     return {
       pagePosts,
