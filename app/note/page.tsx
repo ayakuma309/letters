@@ -8,7 +8,7 @@ export default async function Page() {
       {notes.map(({ pagePosts, title }, i) => (
         <div
           key={i}
-          className='mr-1 h-screen overflow-scroll p-3 min-w-[400px]'
+          className='mr-1 h-screen overflow-scroll p-3 min-w-[450px]'
         >
           <p className='text-2xl font-bold'>{title}</p>
           {pagePosts.map((post, i) => (
