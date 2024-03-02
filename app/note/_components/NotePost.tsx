@@ -1,4 +1,4 @@
-import { RssFeedPostType } from '@/actions/get-all-feed';
+import { RssFeedPostType } from '@/actions/get-note-feed';
 import Image from 'next/image';
 import Link from 'next/link';
 

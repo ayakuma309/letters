@@ -1,4 +1,4 @@
-import { getNoteRssFeeds } from '@/actions/get-all-feed';
+import { getNoteRssFeeds } from '@/actions/get-note-feed';
 import NotePost from './_components/NotePost';
 
 export default async function Page() {

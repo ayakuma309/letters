@@ -15,7 +15,11 @@ const getRssFeed = async (
   title: string
 ): Promise<{ pagePosts: RssFeedPostType[]; title: string }> => {
   try {
-    const feed = await new Parser().parseURL(url);
+    const feed = await new Parser({
+      customFields: {
+        item: ['note:creatorImage', 'note:creatorName', 'media:thumbnail'],
+      },
+    }).parseURL(url);
     const pagePosts: RssFeedPostType[] = feed.items.map((item) => ({
       slug: item.link ?? url,
       title: item.title ?? '',
