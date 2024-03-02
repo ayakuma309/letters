@@ -9,9 +9,5 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const qiitas = await getQiita();
-  return (
-    <div className='sm:ml-20 mx-auto mt-10 py-4'>
-      <Qiitas qiitas={qiitas} />
-    </div>
-  );
+  return <Qiitas qiitas={qiitas} />;
 }
