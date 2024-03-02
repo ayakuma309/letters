@@ -13,13 +13,18 @@ export interface RssFeedPostType {
 const getRssFeed = async (
   url: string,
   title: string
-): Promise<{ pagePosts: RssFeedPostType[]; title: string }> => {
+): Promise<{
+  link?: string;
+  pagePosts: RssFeedPostType[];
+  title: string;
+}> => {
   try {
     const feed = await new Parser({
       customFields: {
         item: ['note:creatorImage', 'note:creatorName', 'media:thumbnail'],
       },
     }).parseURL(url);
+    const link = feed.link ?? '';
     const pagePosts: RssFeedPostType[] = feed.items
       .sort((a, b) => {
         const dateA = a.pubDate ? new Date(a.pubDate) : new Date();
@@ -35,6 +40,7 @@ const getRssFeed = async (
         'media:thumbnail': item['media:thumbnail'] ?? '',
       }));
     return {
+      link,
       pagePosts,
       title,
     };
