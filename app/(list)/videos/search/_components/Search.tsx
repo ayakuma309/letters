@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import VideoGridItem from './VideoGridItem';
 import axios from 'axios';
-import { params } from '../../../../lib/youtube';
+import { params } from '../../../../../lib/youtube';
 import { VideoResponseProps } from '@/types/types';
 
 type Props = {

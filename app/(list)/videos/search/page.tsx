@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import React from 'react';
 import { redirect } from 'next/navigation';
 import getCurrentUser from '@/actions/getCurrentUser';
-import Search from '@/app/videos/search/_components/Search';
+import Search from '@/app/(list)/videos/search/_components/Search';
 import { Role } from '@prisma/client';
 import getFetchYouTubeVideo from '@/actions/getFetchYouTubeVideo';
 
