@@ -42,7 +42,10 @@ export const getPageList = async () => {
         if (result.properties.date.type !== 'date') {
           return '';
         }
-        return result.properties.date;
+        if (result.properties.date.date === null) {
+          return '';
+        }
+        return result.properties.date.date.start;
       })();
 
       const url = (() => {
