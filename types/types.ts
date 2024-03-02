@@ -77,15 +77,3 @@ export type BookVideoListType = {
   id: number;
   book: Pick<BookType, 'id' | 'image' | 'infoLink'>;
 };
-
-//Rss
-export interface RssFeedPostType {
-  slug: string;
-  title: string;
-  date: string;
-  author?: string;
-  categories?: string[];
-  enclosure?: {
-    url: string;
-  };
-}
