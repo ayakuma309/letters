@@ -5,11 +5,10 @@ export async function NotionArticles() {
   const results = await getPageList();
   return (
     <div className='mt-6 grid grid-cols-1 gap-8 md:grid-cols-2'>
-      {results?.map((article, i) => (
+      {results?.map((article) => (
         <div key={article.id}>
-          {i + 1}
           <Link
-            className='flex flex-col h-full gap-x-6 rounded-xl bg-white px-4 py-3 ring-1 ring-gray-200 hover:bg-gray-50 md:px-6 md:shadow-sm dark:bg-gray-800 dark:hover:bg-gray-800/10'
+            className='flex flex-col items-between h-full gap-x-6 rounded-xl bg-white px-4 py-3 ring-1 ring-gray-200 hover:bg-gray-50 md:px-6 md:shadow-sm dark:bg-gray-800 dark:hover:bg-gray-800/10'
             href={article.url as string}
             rel='noopener noreferrer'
             target='_blank'
@@ -20,12 +19,15 @@ export async function NotionArticles() {
                   {article.title}
                 </p>
               </div>
+              <div className='text-xs text-gray-500 md:text-sm dark:text-gray-400'>
+                {article.date}
+              </div>
             </div>
-            <div className=''>
+            <div className='flex flex-wrap gap-2'>
               {article.tags.map((tag) => (
                 <div
                   key={tag}
-                  className='text-xs text-gray-500 md:text-sm dark:text-gray-400'
+                  className='mt-3 text-md text-gray-500 dark:text-gray-400'
                 >
                   {tag}
                 </div>
