@@ -4,10 +4,10 @@ import { ImYoutube2 } from 'react-icons/im';
 import { GiPerspectiveDiceSixFacesRandom } from 'react-icons/gi';
 import { SiQiita } from 'react-icons/si';
 import { FaSearch } from 'react-icons/fa';
-import { BiSolidBookAlt } from 'react-icons/bi';
 import { GiArchiveResearch } from 'react-icons/gi';
 import { FaSearchPlus } from 'react-icons/fa';
 import { FaRegStickyNote } from 'react-icons/fa';
+import { ImBooks } from 'react-icons/im';
 
 export const Menus = [
   { title: 'youtube', path: '/videos', icon: <ImYoutube2 /> },
@@ -17,7 +17,7 @@ export const Menus = [
     icon: <GiPerspectiveDiceSixFacesRandom />,
   },
   { title: 'Qiita', path: '/qiitas', icon: <SiQiita /> },
-  { title: 'Book', path: '/books', icon: <BiSolidBookAlt /> },
+  { title: 'Book', path: '/books', icon: <ImBooks /> },
   { title: 'Note', path: '/note', icon: <FaRegStickyNote /> },
 ];
 
