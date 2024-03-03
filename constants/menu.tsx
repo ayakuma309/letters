@@ -5,9 +5,9 @@ import { GiPerspectiveDiceSixFacesRandom } from 'react-icons/gi';
 import { SiQiita } from 'react-icons/si';
 import { FaSearch } from 'react-icons/fa';
 import { GiArchiveResearch } from 'react-icons/gi';
-import { FaSearchPlus } from 'react-icons/fa';
 import { FaRegStickyNote } from 'react-icons/fa';
 import { ImBooks } from 'react-icons/im';
+import { TbDeviceDesktopSearch } from 'react-icons/tb';
 
 export const Menus = [
   { title: 'youtube', path: '/videos', icon: <ImYoutube2 /> },
@@ -22,7 +22,11 @@ export const Menus = [
 ];
 
 export const LoginAfterMenus = [
-  { title: 'Youtube検索', path: '/videos/search', icon: <FaSearchPlus /> },
+  {
+    title: 'Youtube検索',
+    path: '/videos/search',
+    icon: <TbDeviceDesktopSearch />,
+  },
   { title: 'Qiita検索', path: '/qiitas/search', icon: <FaSearch /> },
   { title: 'Book検索', path: '/books/search', icon: <GiArchiveResearch /> },
 ];
