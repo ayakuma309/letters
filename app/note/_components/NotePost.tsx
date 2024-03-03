@@ -12,7 +12,7 @@ export default function NotePost({ post }: Props) {
       <div className='flex'>
         <div className='flex-1'>
           <Link href={post.slug} target='_blank' rel='noopener noreferrer'>
-            <p className='my-2 text-sm hover:text-blue-500 dark:text-gray-900'>
+            <p className='my-2 text-sm hover:text-orange-500 dark:text-gray-900'>
               {post.title}
             </p>
           </Link>
