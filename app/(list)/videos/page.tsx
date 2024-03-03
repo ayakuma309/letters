@@ -18,7 +18,7 @@ export default async function Page() {
   return (
     <>
       <Link href={`/videos/all`}>
-        <div className='mb-2 border w-42 p-3 mx-auto text-center rounded-md hover:bg-red-500 hover:text-white'>
+        <div className='mb-2 border w-42 p-3 mx-auto text-center rounded-md hover:bg-red-600 hover:text-white'>
           最新動画はこちら
         </div>
       </Link>

@@ -6,7 +6,7 @@ export async function NotionArticles() {
   return (
     <>
       <Link href={`/videos`}>
-        <div className='border w-42 p-3 mx-auto text-center rounded-md hover:bg-red-500 hover:text-white'>
+        <div className='border w-42 p-3 mx-auto text-center rounded-md hover:bg-red-600 hover:text-white'>
           動画一覧へ
         </div>
       </Link>
