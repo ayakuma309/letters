@@ -2,7 +2,7 @@ import { getPageList } from '@/lib/notion';
 import Link from 'next/link';
 
 export async function NotionArticles() {
-  const results = await getPageList();
+  const latestVideos = await getPageList();
   return (
     <>
       <Link href={`/videos`}>
@@ -11,7 +11,7 @@ export async function NotionArticles() {
         </div>
       </Link>
       <div className='mt-6 grid grid-cols-1 gap-8 md:grid-cols-2'>
-        {results?.map((article) => (
+        {latestVideos?.map((article) => (
           <div key={article.id}>
             <Link
               className='flex flex-col items-between h-full gap-x-6 rounded-xl bg-white px-4 py-3 ring-1 ring-gray-200 hover:bg-gray-50 md:px-6 md:shadow-sm dark:bg-gray-800 dark:hover:bg-gray-800/10'
