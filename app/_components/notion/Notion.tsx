@@ -2,16 +2,16 @@ import { getPageList } from '@/lib/notion';
 import Link from 'next/link';
 
 export async function NotionArticles() {
-  const results = await getPageList();
+  const latestVideos = await getPageList();
   return (
-    <div className='sm:ml-20 mx-auto mt-10 py-4'>
+    <>
       <Link href={`/videos`}>
-        <div className='border w-42 p-3 mx-auto text-center rounded-md hover:bg-red-500 hover:text-white'>
+        <div className='border w-42 p-3 mx-auto text-center rounded-md hover:bg-red-600 hover:text-white'>
           動画一覧へ
         </div>
       </Link>
       <div className='mt-6 grid grid-cols-1 gap-8 md:grid-cols-2'>
-        {results?.map((article) => (
+        {latestVideos?.map((article) => (
           <div key={article.id}>
             <Link
               className='flex flex-col items-between h-full gap-x-6 rounded-xl bg-white px-4 py-3 ring-1 ring-gray-200 hover:bg-gray-50 md:px-6 md:shadow-sm dark:bg-gray-800 dark:hover:bg-gray-800/10'
@@ -43,6 +43,6 @@ export async function NotionArticles() {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }

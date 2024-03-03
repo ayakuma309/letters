@@ -1,9 +1,8 @@
-import React from 'react';
-import { Metadata } from 'next';
-import Search from './_components/Search';
 import getCurrentUser from '@/actions/getCurrentUser';
-import { redirect } from 'next/navigation';
 import { Role } from '@prisma/client';
+import { Metadata } from 'next';
+import { redirect } from 'next/navigation';
+import Search from './_components/Search';
 
 export const metadata: Metadata = {
   title: '書籍検索',

@@ -3,9 +3,9 @@
 import {
   Card,
   CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
-  CardDescription,
 } from '@/app/_components/ui/card';
 import LoginButton from './LoginButton';
 

@@ -1,10 +1,10 @@
-import React from 'react';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from '@/app/_components/ui/tooltip';
+import React from 'react';
 
 type Props = {
   title: string;

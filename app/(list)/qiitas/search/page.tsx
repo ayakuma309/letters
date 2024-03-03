@@ -1,9 +1,8 @@
-import React from 'react';
-import { Metadata } from 'next';
-import Search from '@/app/(list)/qiitas/search/_components/Search';
 import getCurrentUser from '@/actions/getCurrentUser';
-import { redirect } from 'next/navigation';
+import Search from '@/app/(list)/qiitas/search/_components/Search';
 import { Role } from '@prisma/client';
+import { Metadata } from 'next';
+import { redirect } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: 'Qiita記事検索',

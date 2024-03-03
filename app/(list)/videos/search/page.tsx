@@ -1,10 +1,9 @@
-import { Metadata } from 'next';
-import React from 'react';
-import { redirect } from 'next/navigation';
 import getCurrentUser from '@/actions/getCurrentUser';
+import getFetchYouTubeVideo from '@/actions/getFetchYouTubeVideo';
 import Search from '@/app/(list)/videos/search/_components/Search';
 import { Role } from '@prisma/client';
-import getFetchYouTubeVideo from '@/actions/getFetchYouTubeVideo';
+import { Metadata } from 'next';
+import { redirect } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: 'YouTube',

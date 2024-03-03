@@ -1,5 +1,5 @@
-import { Metadata } from 'next';
 import getBook from '@/actions/getBook';
+import { Metadata } from 'next';
 import Books from './_components/Books';
 
 export const metadata: Metadata = {

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import Select from 'react-select';
 import { OptionType } from '@/types/types';
+import { useEffect, useState } from 'react';
+import Select from 'react-select';
 
 interface Props {
   onChange: (selectedTags: OptionType[]) => void;

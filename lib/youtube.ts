@@ -1,5 +1,4 @@
-import axios from 'axios';
-import { AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 const KEY = process.env.NEXT_APP_YOUTUBE_API_KEY;
 

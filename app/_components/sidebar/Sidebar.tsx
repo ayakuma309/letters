@@ -1,13 +1,12 @@
 'use client';
-import React from 'react';
-import { User } from '@prisma/client';
-import Menu from './Menu';
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
 } from '@/app/_components/ui/avatar';
+import { User } from '@prisma/client';
 import Link from 'next/link';
+import Menu from './Menu';
 
 type Props = {
   currentUser: User | null;

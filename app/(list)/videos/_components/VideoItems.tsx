@@ -1,11 +1,10 @@
 'use client';
-import React from 'react';
+import SearchBar from '@/app/_components/common/search/SearchBar';
+import TagList from '@/app/_components/common/search/TagList';
+import { useVideoTagSearch } from '@/app/_components/hooks/useSearch';
+import { videoTags } from '@/constants/videoTag';
 import { VideoType } from '@/types/types';
 import Video from './Video';
-import { videoTags } from '@/constants/videoTag';
-import { useVideoTagSearch } from '@/app/_components/hooks/useSearch';
-import TagList from '@/app/_components/common/search/TagList';
-import SearchBar from '@/app/_components/common/search/SearchBar';
 
 type Props = {
   videos: VideoType[];

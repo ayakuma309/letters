@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
 import MenuItem from '../sidebar/MenuItem';
 
 export default function Footer() {
@@ -20,16 +19,19 @@ export default function Footer() {
             />
           </a>
         </div>
-        Copyright © All rights reserved | Letters Tube
+        &copy; {new Date().getFullYear()}| Letters Tube
         <div className='flex justify-center'>
-          <Link href={'/terms'} className='text-gray-400'>
+          <Link href={'/terms'} className='text-gray-500'>
             利用規約
           </Link>
 
-          <Link href={'/privacy-policy'} className='text-gray-400 ml-3'>
+          <Link href={'/privacy-policy'} className='text-gray-500 ml-3'>
             プライバシーポリシー
           </Link>
         </div>
+        <p className='text-center text-xs leading-5 text-gray-500'>
+          当サイトは個人で収集した情報をもとに作成されたサイトです。
+        </p>
       </div>
     </footer>
   );

@@ -1,12 +1,11 @@
-import React from 'react';
-import { useSession } from 'next-auth/react';
-import VideoTags from './VideoTags';
-import { VideoType } from '@/types/types';
-import axios from 'axios';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import { toast } from '@/app/_components/ui/use-toast';
+import { VideoType } from '@/types/types';
 import { Role } from '@prisma/client';
+import axios from 'axios';
+import { useSession } from 'next-auth/react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import VideoTags from './VideoTags';
 
 type Props = {
   video: VideoType;

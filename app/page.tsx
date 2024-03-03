@@ -7,7 +7,7 @@ const Home = async () => {
             Letters Tube
           </h1>
           <p className='leading-relaxed'>
-            未経験の方がどのように勉強すればいいのかを解決する
+            プログラミング未経験の方がどのように勉強すればいいのかを解決する
             <br />
             情報収集サービスです
           </p>

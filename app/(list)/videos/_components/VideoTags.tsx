@@ -1,5 +1,4 @@
 import { TagType } from '@/types/types';
-import React from 'react';
 
 type Props = {
   tags: TagType[];

@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import React from 'react';
 import MenuItem from './MenuItem';
-import Link from 'next/link';
 
 type Props = {
   menuItems: {

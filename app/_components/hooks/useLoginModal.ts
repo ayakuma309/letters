@@ -1,5 +1,5 @@
-import { create } from 'zustand';
 import { ModalType } from '@/types/types';
+import { create } from 'zustand';
 
 // ログイン状態管理
 const useLoginModal = create<ModalType>((set) => ({

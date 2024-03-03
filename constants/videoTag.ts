@@ -6,7 +6,7 @@ export const videoTags = [
   { value: '業界知識', label: '業界知識' },
   { value: 'アプリ開発', label: 'アプリ開発' },
   { value: '書籍', label: '書籍' },
-  { value: '転職活動', label: '転職活動' },
+  { value: '就活', label: '就活' },
   { value: '転職後', label: '転職後' },
   { value: 'コードレビュー', label: 'コードレビュー' },
   { value: '資格', label: '資格' },

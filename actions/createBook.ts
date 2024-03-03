@@ -1,5 +1,5 @@
-import { Book } from '@prisma/client';
 import prisma from '@/lib/prisma';
+import { Book } from '@prisma/client';
 
 const createBook = async ({
   bookId,

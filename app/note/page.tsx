@@ -1,6 +1,6 @@
 import { getNoteRssFeeds } from '@/actions/get-note-feed';
-import NotePost from './_components/NotePost';
 import Link from 'next/link';
+import NotePost from './_components/NotePost';
 
 export default async function Page() {
   const notes = await getNoteRssFeeds();

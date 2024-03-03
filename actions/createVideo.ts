@@ -1,5 +1,5 @@
-import { YouTube } from '@prisma/client';
 import prisma from '@/lib/prisma';
+import { YouTube } from '@prisma/client';
 
 const createVideo = async ({
   videoId,

@@ -1,9 +1,9 @@
-import NextAuth, { NextAuthOptions, Session } from 'next-auth';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
+import NextAuth, { NextAuthOptions, Session } from 'next-auth';
 
-import GoogleProvider from 'next-auth/providers/google';
 import prisma from '@/lib/prisma';
 import { JWT } from 'next-auth/jwt';
+import GoogleProvider from 'next-auth/providers/google';
 
 // NextAuth設定
 export const authOptions: NextAuthOptions = {
