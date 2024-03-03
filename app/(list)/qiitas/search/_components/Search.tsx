@@ -1,8 +1,8 @@
 'use client';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import useSWR from 'swr';
-import SearchForm from './SearchForm';
 import QiitaList from './QiitaList';
+import SearchForm from './SearchForm';
 
 function fetcher(url: string) {
   return fetch(url).then((res) => res.json());

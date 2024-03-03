@@ -1,4 +1,3 @@
-import React from 'react';
 import { QiitaItemsType } from '@/types/qiitaTypes';
 import QiitaItem from './QiitaItem';
 

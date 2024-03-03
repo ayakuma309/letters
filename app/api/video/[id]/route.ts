@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server';
-import prisma from '@/lib/prisma';
 import getCurrentUser from '@/actions/getCurrentUser';
+import prisma from '@/lib/prisma';
+import { NextResponse } from 'next/server';
 
 // 投稿削除
 export async function DELETE(

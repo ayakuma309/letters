@@ -1,15 +1,15 @@
-import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import './globals.css';
 
 // ログイン中のユーザー情報を取得する
-import AuthContext from '@/app/_components/context/AuthContext';
 import getCurrentUser from '@/actions/getCurrentUser';
+import AuthContext from '@/app/_components/context/AuthContext';
 import Sidebar from '@/app/_components/sidebar/Sidebar';
 
 import { Toaster } from '@/app/_components/ui/toaster';
-import GoogleAnalytics from './_components/common/GoogleAnalytics/GoogleAnalytics';
 import Footer from './_components/common/Footer';
+import GoogleAnalytics from './_components/common/GoogleAnalytics/GoogleAnalytics';
 
 const inter = Inter({ subsets: ['latin'] });
 

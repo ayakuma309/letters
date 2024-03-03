@@ -1,8 +1,8 @@
-import React, { Suspense } from 'react';
-import { Metadata } from 'next';
 import getRandomVideo from '@/actions/getRandomVideo';
-import RandomVideos from './_components/RandomVideos';
+import { Metadata } from 'next';
+import { Suspense } from 'react';
 import Loading from '../../loading';
+import RandomVideos from './_components/RandomVideos';
 
 export const metadata: Metadata = {
   title: 'YouTube',

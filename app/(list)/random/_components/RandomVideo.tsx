@@ -1,6 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
 import { RandomVideoType } from '@/types/types';
+import Link from 'next/link';
 
 type Props = {
   video: RandomVideoType;

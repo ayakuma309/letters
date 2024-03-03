@@ -1,9 +1,9 @@
 'use client';
-import React, { useState } from 'react';
-import VideoGridItem from './VideoGridItem';
-import axios from 'axios';
-import { params } from '../../../../../lib/youtube';
 import { VideoResponseProps } from '@/types/types';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { params } from '../../../../../lib/youtube';
+import VideoGridItem from './VideoGridItem';
 
 type Props = {
   videos: VideoResponseProps[] | null;

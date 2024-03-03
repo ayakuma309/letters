@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
 import MenuItem from '../sidebar/MenuItem';
 
 export default function Footer() {

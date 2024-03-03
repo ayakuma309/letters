@@ -1,6 +1,5 @@
-import React from 'react';
-import NewBookmarkModal from './NewBookmarkModal';
 import { VideoType } from '@/types/types';
+import NewBookmarkModal from './NewBookmarkModal';
 
 type Props = {
   video: VideoType;

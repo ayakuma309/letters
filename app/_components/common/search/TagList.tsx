@@ -1,5 +1,4 @@
 import { OptionType } from '@/types/types';
-import React from 'react';
 
 type Props = {
   handleSearch: (tag: string) => void;

@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server';
-import getCurrentUser from '@/actions/getCurrentUser';
 import createVideo from '@/actions/createVideo';
+import getCurrentUser from '@/actions/getCurrentUser';
+import { NextResponse } from 'next/server';
 
 // 新規投稿
 export async function POST(request: Request) {

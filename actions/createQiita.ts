@@ -1,5 +1,5 @@
-import { Qiita } from '@prisma/client';
 import prisma from '@/lib/prisma';
+import { Qiita } from '@prisma/client';
 
 const createVideo = async ({
   qiitaId,

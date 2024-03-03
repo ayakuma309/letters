@@ -1,5 +1,5 @@
-import { Bookmark } from '@prisma/client';
 import prisma from '@/lib/prisma';
+import { Bookmark } from '@prisma/client';
 const createBookmark = async ({
   videoId,
   title,

@@ -1,12 +1,12 @@
 // constants/menu.ts
 
-import { ImYoutube2 } from 'react-icons/im';
-import { GiPerspectiveDiceSixFacesRandom } from 'react-icons/gi';
+import { FaRegStickyNote, FaSearch } from 'react-icons/fa';
+import {
+  GiArchiveResearch,
+  GiPerspectiveDiceSixFacesRandom,
+} from 'react-icons/gi';
+import { ImBooks, ImYoutube2 } from 'react-icons/im';
 import { SiQiita } from 'react-icons/si';
-import { FaSearch } from 'react-icons/fa';
-import { GiArchiveResearch } from 'react-icons/gi';
-import { FaRegStickyNote } from 'react-icons/fa';
-import { ImBooks } from 'react-icons/im';
 import { TbDeviceDesktopSearch } from 'react-icons/tb';
 
 export const Menus = [

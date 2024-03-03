@@ -1,8 +1,8 @@
+import Spinner from '@/app/_components/ui/spinner';
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 import VideoDetail from './_components/VideoDetail';
 import VideoBooks from './_components/books/VideoBooks';
-import { Suspense } from 'react';
-import Spinner from '@/app/_components/ui/spinner';
 
 export const metadata: Metadata = {
   title: 'YouTube',

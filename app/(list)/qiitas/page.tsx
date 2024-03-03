@@ -1,6 +1,6 @@
-import { Metadata } from 'next';
 import getQiita from '@/actions/getQiita';
 import Qiitas from '@/app/(list)/qiitas/_components/Qiitas';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Qiita記事',

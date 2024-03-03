@@ -1,15 +1,14 @@
 import { Role, User } from '@prisma/client';
-import React from 'react';
 // import Link from 'next/link';
 import { signOut } from 'next-auth/react';
 
 // import { IoMdLogIn } from 'react-icons/io';
-import { IoMdLogOut } from 'react-icons/io';
 import { LoginAfterMenus, Menus } from '@/constants/menu';
+import { IoMdLogOut } from 'react-icons/io';
 
-import MenuItems from './MenuItems';
-import MenuItem from './MenuItem';
 import { toast } from '../ui/use-toast';
+import MenuItem from './MenuItem';
+import MenuItems from './MenuItems';
 
 type Props = {
   currentUser: User | null;

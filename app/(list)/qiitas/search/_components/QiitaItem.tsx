@@ -1,13 +1,13 @@
+import TagSelect from '@/app/_components/common/search/TagSelect';
 import { toast } from '@/app/_components/ui/use-toast';
+import { qiitaTags } from '@/constants/qiitaTag';
 import { QiitaItemsType } from '@/types/qiitaTypes';
 import { OptionType } from '@/types/types';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BsBookmark } from 'react-icons/bs';
-import { qiitaTags } from '@/constants/qiitaTag';
-import TagSelect from '@/app/_components/common/search/TagSelect';
 
 type Props = {
   item: QiitaItemsType;

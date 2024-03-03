@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import BookmarkItem from './Bookmark';
-import { toast } from '../../../../../_components/ui/use-toast';
-import axios from 'axios';
 import { Bookmark } from '@prisma/client';
+import axios from 'axios';
+import { useState } from 'react';
+import { toast } from '../../../../../_components/ui/use-toast';
+import BookmarkItem from './Bookmark';
 
 interface Props {
   bookmarks: Bookmark[];

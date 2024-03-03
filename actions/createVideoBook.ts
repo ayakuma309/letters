@@ -1,5 +1,5 @@
-import { YouTubeBook } from '@prisma/client';
 import prisma from '@/lib/prisma';
+import { YouTubeBook } from '@prisma/client';
 
 const createVideoBook = async ({
   videoId,
