@@ -1,25 +1,10 @@
 import Link from 'next/link';
-import MenuItem from '../sidebar/MenuItem';
 
 export default function Footer() {
   return (
     <footer className='py-5'>
       <div className='text-center text-sm'>
-        <div className='flex justify-center space-x-5'>
-          <a
-            href='https://twitter.com/ZCunkuma'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <MenuItem
-              title={'お問い合わせはこちらからお願いします'}
-              icon={
-                <img src='https://img.icons8.com/fluent/30/000000/twitter.png' />
-              }
-            />
-          </a>
-        </div>
-        &copy; {new Date().getFullYear()}| Letters Tube
+        &copy; {new Date().getFullYear()} Letters Tube
         <div className='flex justify-center'>
           <Link href={'/terms'} className='text-gray-500'>
             利用規約
