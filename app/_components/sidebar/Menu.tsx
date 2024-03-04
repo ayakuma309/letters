@@ -1,8 +1,6 @@
 import { Role, User } from '@prisma/client';
-// import Link from 'next/link';
 import { signOut } from 'next-auth/react';
 
-// import { IoMdLogIn } from 'react-icons/io';
 import { LoginAfterMenus, Menus } from '@/constants/menu';
 import { IoMdLogOut } from 'react-icons/io';
 
