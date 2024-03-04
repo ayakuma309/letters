@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
         <div className='mx-8 md:mx-20 py-5  mt-12'>
           <article className='prose prose-sm max-w-none'>
             <p>
-              <span className='font-bold'>Tube Letters</span>
+              <span className='font-bold'>Letters Tube</span>
               （以下、「当方」といいます。）は、本ウェブサイト上で提供するサービス（以下、「本サービス」といいます。）におけるユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。
             </p>
           </article>
